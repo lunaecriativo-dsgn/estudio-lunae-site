@@ -1,0 +1,10 @@
+# Site de página única (React Router): qualquer rota que não seja um arquivo real
+# volta para o index.html, assim links diretos e atualizar a página não dão erro 404.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>

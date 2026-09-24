@@ -1,9 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lunae - Em construção</title>
+    <title>Lunae Estúdio Criativo</title>
+    <meta name="description" content="Estúdio criativo especializado em construir presença digital premium através de Identidade Visual, Redes Sociais e Sites Institucionais de alta performance." />
+    <meta property="og:title" content="Lunae Estúdio Criativo" />
+    <meta property="og:description" content="Estúdio criativo especializado em construir presença digital premium através de Identidade Visual, Redes Sociais e Sites Institucionais de alta performance." />
+    <script>
+      (function() {
+        try {
+          var savedTheme = localStorage.getItem('lunae-theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.style.colorScheme = 'dark';
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.style.colorScheme = 'light';
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,10 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300;400&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Playfair Display", ui-serif, Georgia, serif;
+  --font-display: "Londrina Solid", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
   --font-body: "Montserrat", ui-sans-serif, system-ui, sans-serif;
 
   --color-border: hsl(var(--border));
@@ -48,7 +51,7 @@
     --primary-foreground: 0 0% 94%;
 
     /* Secondary: Coral Pink #FF879A - 10% */
-    --secondary: 351 100% 77%;
+    --secondary: 345 93% 73%;
     --secondary-foreground: 240 6% 9%;
 
     --muted: 0 0% 85%; /* #D9D9D9 */
@@ -86,18 +89,108 @@
     --card-foreground: 0 0% 94%;
     --popover: 240 6% 12%;
     --popover-foreground: 0 0% 94%;
-    --primary: 245 38% 55%;
-    --primary-foreground: 0 0% 94%;
-    --secondary: 351 100% 77%;
+    --primary: 245 45% 65%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 345 93% 73%;
     --secondary-foreground: 240 6% 9%;
-    --muted: 240 6% 20%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 240 6% 18%;
+    --muted-foreground: 240 5% 70%;
     --accent: 351 100% 77%;
     --accent-foreground: 240 6% 9%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
     --border: 240 6% 20%;
     --input: 240 6% 20%;
-    --ring: 245 38% 55%;
+    --ring: 245 45% 65%;
+
+    --shadow-soft: 0 4px 20px -4px rgba(0, 0, 0, 0.4);
+    --shadow-card: 0 8px 32px -8px rgba(0, 0, 0, 0.5);
+    --shadow-hover: 0 12px 40px -8px rgba(0, 0, 0, 0.6);
   }
+}
+
+/* Dark mode theme overrides & smooth transitions */
+.dark html {
+  color-scheme: dark;
+}
+
+.dark .service-card {
+  background: hsl(240 6% 13% / 0.95) !important;
+  border: 1px solid hsl(240 6% 22%) !important;
+}
+
+.dark .polaroid-frame {
+  background-color: hsl(240 6% 14%) !important;
+  color: hsl(0 0% 94%) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark .bg-white {
+  background-color: hsl(240 6% 13%);
+}
+
+.dark .bg-white\/90,
+.dark .bg-white\/80,
+.dark .bg-white\/70,
+.dark .bg-white\/60,
+.dark .bg-white\/50,
+.dark .bg-white\/40 {
+  background-color: hsl(240 6% 14% / 0.85);
+}
+
+.dark .border-\[\#443A94\]\/5,
+.dark .border-\[\#443A94\]\/10,
+.dark .border-\[\#443A94\]\/15,
+.dark .border-\[\#443A94\]\/20 {
+  border-color: hsl(240 6% 22%);
+}
+
+.dark .text-\[\#1E1E1E\],
+.dark .text-\[\#1A1A1A\],
+.dark .text-\[\#171718\],
+.dark .text-\[\#06121D\],
+.dark .text-\[\#2D1B33\] {
+  color: hsl(0 0% 95%);
+}
+
+.dark .text-\[\#4A3B4E\] {
+  color: hsl(270 20% 88%);
+}
+
+.dark .bg-\[\#FAF9F6\],
+.dark .bg-\[\#FDFBF7\],
+.dark .bg-\[\#F5F2EC\] {
+  background-color: hsl(270 10% 10%);
+}
+
+.dark .text-\[\#443A94\] {
+  color: hsl(245 70% 75%);
+}
+
+.dark .bg-\[\#443A94\]\/5,
+.dark .bg-\[\#443A94\]\/10 {
+  background-color: hsl(240 6% 15% / 0.7);
+}
+
+.dark .bg-\[\#F0F0F0\] {
+  background-color: hsl(240 6% 11%);
+}
+
+.dark .border-\[\#D9D9D9\] {
+  border-color: hsl(240 6% 22%);
+}
+
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: hsl(240 6% 14%) !important;
+  color: hsl(0 0% 95%) !important;
+  border-color: hsl(240 6% 24%) !important;
+}
+
+.dark select option {
+  background-color: hsl(240 6% 14%);
+  color: hsl(0 0% 95%);
 }
 
 @layer base {
@@ -129,16 +222,11 @@
   }
 
   .paper-texture {
-    background-color: #ffffff;
-    background-image: url('/assets/paper-bg.jpg');
+    background-image: url('@/assets/paper-texture.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     background-attachment: fixed;
-    position: relative;
   }
-
-  /* Removed the CSS-based crumpled paper effect to use the provided image instead */
 
   .gradient-primary {
     background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(245 38% 55%) 100%);
