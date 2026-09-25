@@ -34,8 +34,8 @@ const navItems: NavItem[] = [
       { label: "Presença Digital", href: "/servicos/presenca-digital" }
     ]
   },
-  { label: "Processo", href: "/processo" },
-  { label: "FAQ", href: "/faq" },
+  { label: "Método", href: "/processo" },
+  { label: "Dúvidas", href: "/faq" },
 ];
 
 const Header = () => {
@@ -106,8 +106,8 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
         isScrolled
-          ? "bg-primary/95 backdrop-blur-md border-primary-foreground/10 shadow-sm py-2"
-          : "bg-primary/90 backdrop-blur-sm border-primary-foreground/5 py-3"
+          ? "bg-[#443A94]/95 dark:bg-primary/95 backdrop-blur-md border-primary-foreground/10 shadow-sm py-2"
+          : "bg-[#443A94]/90 dark:bg-primary/90 backdrop-blur-sm border-primary-foreground/5 py-3"
       }`}
     >
       <a

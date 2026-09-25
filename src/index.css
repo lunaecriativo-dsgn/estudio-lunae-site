@@ -221,6 +221,18 @@
     @apply container mx-auto px-4 md:px-6 lg:px-8;
   }
 
+  /* Fundo de papel amassado: versão clara e versão escura, com contraste reforçado */
+  .paper-bg {
+    background-image: url('./assets/paper-texture-light.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .dark .paper-bg {
+    background-image: url('./assets/paper-texture-dark.jpg');
+  }
+
   .paper-texture {
     background-image: url('@/assets/paper-texture.jpg');
     background-size: cover;

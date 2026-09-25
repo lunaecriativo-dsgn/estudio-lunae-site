@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ArrowUp, Instagram, Linkedin, MessageCircle } from "lucide-react";
-import logoLunae from "@/assets/logo-lunae.png";
+import logoLunae from "@/assets/logos/logo-ver-bege-2026.png";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const Footer = () => {
@@ -34,12 +34,12 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-primary text-primary-foreground py-12">
+    <footer className="bg-[#443A94] dark:bg-primary text-primary-foreground py-12">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-10 items-start mb-12 text-left">
           {/* Logo */}
-          <div className="space-y-4">
-            <Link 
+          <div className="space-y-2">
+            <Link
               to="/" 
               onClick={(e) => handleNavClick(e, "/")}
               className="inline-block focus:outline-none focus:ring-2 focus:ring-accent rounded-lg"
@@ -48,11 +48,11 @@ const Footer = () => {
               <img
                 src={logoLunae}
                 alt="Lunae Studio logo"
-                className="h-10 w-auto mb-4"
+                className="block h-10 w-auto"
               />
             </Link>
-            <p className="font-body text-primary-foreground/80 text-sm leading-relaxed max-w-sm">
-              Estúdio criativo que une Design Visual, UX Design e Estratégia Digital para impulsionar e dignificar o empreendedorismo feminino.
+            <p className="w-fit font-display font-normal text-2xl tracking-wide text-primary-foreground origin-left cursor-default transition-transform duration-300 motion-safe:hover:scale-110 motion-reduce:transition-none">
+              Estúdio Criativo
             </p>
           </div>
 
@@ -84,7 +84,7 @@ const Footer = () => {
                   onClick={(e) => handleNavClick(e, "/processo")}
                   className="font-body text-primary-foreground/80 hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-accent rounded px-1 py-1"
                 >
-                  Processo
+                  Método
                 </Link>
               </li>
               <li>
@@ -93,7 +93,7 @@ const Footer = () => {
                   onClick={(e) => handleNavClick(e, "/faq")}
                   className="font-body text-primary-foreground/80 hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-accent rounded px-1 py-1"
                 >
-                  FAQ
+                  Dúvidas
                 </Link>
               </li>
               <li>

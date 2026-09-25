@@ -6,7 +6,6 @@ import AboutSection from "@/components/AboutSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import paperTexture from "@/assets/paper-texture.jpg";
 
 const Index = () => {
   // Home Page Schema.org JSON-LD structured data
@@ -32,16 +31,10 @@ const Index = () => {
       />
 
       <div 
-        className="min-h-screen relative"
-        style={{ 
-          backgroundImage: `url(${paperTexture})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-        }}
+        className="min-h-screen relative paper-bg"
       >
         {/* Overlay for better readability */}
-        <div className="absolute inset-0 bg-background/80 pointer-events-none" />
+        <div className="absolute inset-0 bg-background/[0.64] pointer-events-none" />
         
         {/* Content */}
         <div className="relative z-10">

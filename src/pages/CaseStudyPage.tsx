@@ -3,7 +3,6 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { ChevronLeft, Monitor, Smartphone, Search, FileText, Layers, ChevronRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import paperTexture from "@/assets/paper-texture.jpg";
 import OnyxCaseStudy from "@/components/OnyxCaseStudy";
 import CamilaRamosCaseStudy from "@/components/CamilaRamosCaseStudy";
 import MariLocacoesCaseStudy from "@/components/MariLocacoesCaseStudy";
@@ -111,15 +110,9 @@ const CaseStudyPage = () => {
 
   return (
     <div 
-      className="min-h-screen relative"
-      style={{ 
-        backgroundImage: `url(${paperTexture})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-      }}
+      className="min-h-screen relative paper-bg"
     >
-      <div className="absolute inset-0 bg-background/80 pointer-events-none" />
+      <div className="absolute inset-0 bg-background/[0.64] pointer-events-none" />
       
       <div className="relative z-10">
         <Header />

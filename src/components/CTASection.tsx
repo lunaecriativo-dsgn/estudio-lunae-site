@@ -9,7 +9,7 @@ const CTASection = () => {
   };
 
   return (
-    <section id="cta" className="py-32 md:py-48 bg-background relative overflow-hidden border-t border-[#443A94]/5">
+    <section id="cta" className="py-32 md:py-48 relative overflow-hidden border-t border-[#443A94]/5">
       {/* Soft background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#FA7C9C]/5 rounded-full blur-[120px] pointer-events-none -z-10" />
 

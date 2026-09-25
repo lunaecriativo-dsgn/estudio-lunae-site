@@ -12,7 +12,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative flex flex-col justify-center pt-32 pb-24 md:pt-48 md:pb-36 overflow-hidden bg-background">
+    <section className="relative flex flex-col justify-center pt-32 pb-24 md:pt-48 md:pb-36 overflow-hidden">
       {/* Subtle brand touch */}
       <div className="absolute top-32 left-10 text-secondary/40 animate-pulse text-2xl pointer-events-none hidden md:block">✦</div>
       <div className="absolute bottom-32 right-10 text-secondary/30 animate-pulse text-2xl pointer-events-none hidden md:block">🌙</div>
@@ -35,9 +35,9 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-normal text-[#443A94] leading-tight tracking-wide max-w-5xl"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-normal text-[#1E1E1E] dark:text-foreground leading-tight tracking-wide max-w-5xl"
           >
-            Sua marca comunica o <span className="text-[#FA7C9C] relative inline-block">verdadeiro valor</span> do seu trabalho?
+            Sua marca comunica o <span className="text-[#443A94] dark:text-primary">verdadeiro valor</span> do seu trabalho?
           </motion.h1>
 
           {/* Short Subheadline */}
@@ -65,7 +65,7 @@ const HeroSection = () => {
             </Link>
             <button
               onClick={handleWhatsApp}
-              className="px-8 py-4.5 border border-[#443A94]/25 text-primary hover:border-secondary hover:text-secondary transition-all duration-300 rounded-full font-body font-semibold text-base hover:-translate-y-0.5 min-h-[44px] flex items-center justify-center text-center w-full sm:w-auto bg-white/50 backdrop-blur-sm cursor-pointer"
+              className="px-8 py-4.5 border-2 border-[#443A94] text-primary hover:bg-[#FA7C9C] hover:border-[#FA7C9C] hover:text-white hover:shadow-lg hover:shadow-[#FA7C9C]/30 transition-all duration-300 rounded-full font-body font-semibold text-base hover:-translate-y-0.5 min-h-[44px] flex items-center justify-center text-center w-full sm:w-auto bg-white/50 backdrop-blur-sm cursor-pointer"
             >
               Falar com a Lunae ✦
             </button>

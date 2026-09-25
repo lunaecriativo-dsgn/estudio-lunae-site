@@ -4,7 +4,6 @@ import { ChevronRight, Home, Send, MessageCircle, Mail, MapPin, Sparkles, CheckC
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import paperTexture from "@/assets/paper-texture.jpg";
 
 const ContatoPage = () => {
   const [nome, setNome] = useState("");
@@ -87,15 +86,9 @@ const ContatoPage = () => {
       />
 
       <div 
-        className="min-h-screen relative"
-        style={{ 
-          backgroundImage: `url(${paperTexture})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-        }}
+        className="min-h-screen relative paper-bg"
       >
-        <div className="absolute inset-0 bg-background/80 pointer-events-none" />
+        <div className="absolute inset-0 bg-background/[0.64] pointer-events-none" />
         
         <div className="relative z-10">
           <Header />

@@ -32,7 +32,7 @@ const solutions: Solution[] = [
 
 const ServicesSection = () => {
   return (
-    <section id="servicos" className="py-24 md:py-40 bg-background scroll-mt-20 border-t border-[#443A94]/5">
+    <section id="servicos" className="py-24 md:py-40 scroll-mt-20 border-t border-[#443A94]/5">
       <div className="section-container max-w-6xl mx-auto px-6 md:px-12">
         
         {/* Section Header */}
