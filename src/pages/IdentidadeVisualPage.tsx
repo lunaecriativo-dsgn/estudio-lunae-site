@@ -9,7 +9,7 @@ const IdentidadeVisualPage = () => {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "Identidade Visual Premium | Lunae",
+    "name": "Identidade Visual | Lunae",
     "description": "Criação de marcas completas, logotipos autorais, paletas de cores sofisticadas, tipografias, manual de identidade e templates estratégicos no Canva.",
     "brand": {
       "@type": "Brand",
@@ -20,7 +20,7 @@ const IdentidadeVisualPage = () => {
   return (
     <>
       <SEO 
-        title="Identidade Visual Premium | Lunae Estúdio Criativo" 
+        title="Identidade Visual | Lunae Estúdio Criativo" 
         description="Seja reconhecida como referência máxima no seu nicho. Criamos logotipos, grafismos e manuais de marcas autênticos e memoráveis."
         schema={serviceSchema}
       />
@@ -56,7 +56,7 @@ const IdentidadeVisualPage = () => {
                   🎨 SOLUÇÃO INTEGRADA DE MARCA
                 </span>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-normal text-primary leading-tight mb-6">
-                  Identidade Visual Premium
+                  Identidade Visual
                 </h1>
                 <p className="text-lg md:text-xl font-body text-muted-foreground leading-relaxed font-light">
                   Seu talento merece ser reconhecido à primeira vista. Criamos logotipo, cores e grafismos autorais para o mundo ver o seu valor real.

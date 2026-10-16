@@ -206,7 +206,7 @@ const ContatoPage = () => {
                           className="w-full font-body text-sm px-4 py-3 bg-white border border-[#443A94]/15 rounded-xl focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary"
                         >
                           <option value="">Selecione um serviço...</option>
-                          <option value="Identidade Visual">Identidade Visual Premium</option>
+                          <option value="Identidade Visual">Identidade Visual</option>
                           <option value="Instagram Estratégico">Instagram Estratégico</option>
                           <option value="Sites Institucionais">Sites Institucionais</option>
                           <option value="Landing Pages">Landing Pages de Conversão</option>

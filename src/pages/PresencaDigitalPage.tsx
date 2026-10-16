@@ -56,7 +56,7 @@ const PresencaDigitalPage = () => {
                   💻 SUA CASA PRÓPRIA NA INTERNET
                 </span>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-normal text-primary leading-tight mb-6">
-                  Presença Digital Integrada
+                  Presença Digital
                 </h1>
                 <p className="text-lg md:text-xl font-body text-muted-foreground leading-relaxed font-light">
                   Pare de depender só do algoritmo. Um site seu transmite credibilidade e traz oportunidades todos os dias.
