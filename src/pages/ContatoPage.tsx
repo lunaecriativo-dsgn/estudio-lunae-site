@@ -208,6 +208,8 @@ const ContatoPage = () => {
                           <option value="">Selecione um serviço...</option>
                           <option value="Identidade Visual">Identidade Visual</option>
                           <option value="Instagram Estratégico">Instagram Estratégico</option>
+                          <option value="Portfólio">Portfólio</option>
+                          <option value="Complementos Ilustrados">Complementos Ilustrados</option>
                           <option value="Sites Institucionais">Sites Institucionais</option>
                           <option value="Landing Pages">Landing Pages de Conversão</option>
                           <option value="UX/UI Design">UX/UI Design e Figma</option>

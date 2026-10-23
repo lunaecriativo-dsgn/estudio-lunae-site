@@ -31,7 +31,9 @@ const navItems: NavItem[] = [
     subItems: [
       { label: "Identidade Visual", href: "/servicos/identidade-visual" },
       { label: "Instagram Estratégico", href: "/servicos/instagram-estrategico" },
-      { label: "Presença Digital", href: "/servicos/presenca-digital" }
+      { label: "Presença Digital", href: "/servicos/presenca-digital" },
+      { label: "Portfólio", href: "/servicos/portfolio" },
+      { label: "Complementos Ilustrados", href: "/servicos/complementos-ilustrados" }
     ]
   },
   { label: "Método", href: "/processo" },

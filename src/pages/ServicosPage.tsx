@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ChevronRight, Home, ArrowRight, Paintbrush, Smartphone, Globe } from "lucide-react";
+import { ChevronRight, Home, ArrowRight, Paintbrush, Smartphone, Globe, FolderOpen, Sparkles } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -34,6 +34,20 @@ const servicesIndexList: ServiceIndexItem[] = [
     shortDescription: "Site rápido e estratégico que passa credibilidade e atrai as pessoas certas.",
     iconComponent: <Globe className="w-6 h-6 text-secondary" />,
     url: "/servicos/presenca-digital"
+  },
+  {
+    id: "portfolio",
+    title: "Portfólio",
+    shortDescription: "Seus melhores projetos reunidos em um portfólio claro, em documento ou em site.",
+    iconComponent: <FolderOpen className="w-6 h-6 text-secondary" />,
+    url: "/servicos/portfolio"
+  },
+  {
+    id: "complementos-ilustrados",
+    title: "Complementos Ilustrados",
+    shortDescription: "Personas, infográficos, carrosséis e ilustrações feitas só pra sua marca.",
+    iconComponent: <Sparkles className="w-6 h-6 text-secondary" />,
+    url: "/servicos/complementos-ilustrados"
   }
 ];
 
@@ -93,11 +107,11 @@ const ServicosPage = () => {
               </div>
 
               {/* Solutions List */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto mb-20">
+              <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto mb-20">
                 {servicesIndexList.map((sol) => (
                   <article
                     key={sol.id}
-                    className="flex flex-col justify-between p-8 rounded-3xl bg-white border border-[#443A94]/10 hover:border-secondary/30 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 text-left"
+                    className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)] flex flex-col justify-between p-8 rounded-3xl bg-white border border-[#443A94]/10 hover:border-secondary/30 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 text-left"
                   >
                     <div className="space-y-6">
                       <div className="w-12 h-12 rounded-2xl bg-secondary/5 flex items-center justify-center">
@@ -127,7 +141,7 @@ const ServicosPage = () => {
               </div>
 
               {/* Premium Integration Bundle Callout */}
-              <section className="bg-gradient-to-br from-[#443A94] to-[#FA7C9C] rounded-3xl p-8 md:p-16 text-white text-center shadow-lg relative overflow-hidden max-w-4xl mx-auto">
+              <section className="bg-[#443A94] rounded-3xl p-8 md:p-16 text-white text-center shadow-lg relative overflow-hidden max-w-4xl mx-auto">
                 <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full blur-3xl pointer-events-none" />
                 <h2 className="text-2xl md:text-3xl font-display font-normal mb-4">
                   Pronta pra ocupar seu espaço de vez?

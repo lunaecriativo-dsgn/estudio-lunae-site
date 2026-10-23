@@ -8,7 +8,7 @@ import SEO from "@/components/SEO";
 
 interface FAQItem {
   id: string;
-  category: "identidade-visual" | "instagram-estrategico" | "presenca-digital" | "gerais";
+  category: "identidade-visual" | "instagram-estrategico" | "presenca-digital" | "portfolio" | "complementos-ilustrados" | "gerais";
   question: string;
   answer: string;
 }
@@ -84,6 +84,58 @@ const allFaqs: FAQItem[] = [
     category: "presenca-digital",
     question: "Já tenho identidade visual pronta. Posso contratar apenas o site?",
     answer: "Sim! Aplicamos suas cores e fontes já existentes, com foco total em usabilidade no novo site."
+  },
+
+  // Categoria: Portfólio
+  {
+    id: "portfolio-documento-ou-site",
+    category: "portfolio",
+    question: "Qual a diferença entre portfólio em documento e em site?",
+    answer: "O documento é um PDF pronto pra enviar por e-mail ou WhatsApp. O site é um endereço seu, que qualquer pessoa acessa e que aparece no Google. Você escolhe um ou os dois."
+  },
+  {
+    id: "portfolio-quantos-projetos",
+    category: "portfolio",
+    question: "Quantos projetos entram no portfólio?",
+    answer: "De 5 a 8 projetos. A gente escolhe juntas os que melhor mostram o seu trabalho."
+  },
+  {
+    id: "portfolio-textos-prontos",
+    category: "portfolio",
+    question: "Preciso ter os textos prontos?",
+    answer: "Não. A gente escreve a bio, o “sobre mim” e a descrição de cada projeto, com base na nossa conversa. Só precisamos entender seu tom de voz e qual ideia você quer passar."
+  },
+  {
+    id: "portfolio-os-dois-formatos",
+    category: "portfolio",
+    question: "Posso contratar o portfólio em documento e em site?",
+    answer: "Sim. Nos dois formatos, a curadoria e os textos entram uma vez só."
+  },
+
+  // Categoria: Complementos Ilustrados
+  {
+    id: "complementos-o-que-sao",
+    category: "complementos-ilustrados",
+    question: "O que são os complementos ilustrados?",
+    answer: "Ilustrações feitas só pra sua marca, como persona, infográfico, carrossel, ícones e personagem. Servem pra explicar, encantar e diferenciar."
+  },
+  {
+    id: "complementos-contratar-sozinho",
+    category: "complementos-ilustrados",
+    question: "Posso contratar só um complemento?",
+    answer: "Sim. Cada um pode ser contratado sozinho ou junto de qualquer outro serviço. Em cada item, mostramos com o que ele combina melhor."
+  },
+  {
+    id: "complementos-formato-entrega",
+    category: "complementos-ilustrados",
+    question: "Em que formato recebo as ilustrações?",
+    answer: "Prontas, em PNG ou SVG. Os textos e layouts que acompanham as peças ficam editáveis."
+  },
+  {
+    id: "complementos-carrossel",
+    category: "complementos-ilustrados",
+    question: "Quantas lâminas tem um carrossel?",
+    answer: "Até 8 lâminas ilustradas, com roteiro e textos editáveis. Também temos o pacote com 3 carrosséis na mesma linguagem visual."
   },
 
   // Categoria: Perguntas Gerais
@@ -188,6 +240,8 @@ const categories = [
   { id: "identidade-visual", label: "Identidade Visual" },
   { id: "instagram-estrategico", label: "Instagram Estratégico" },
   { id: "presenca-digital", label: "Presença Digital" },
+  { id: "portfolio", label: "Portfólio" },
+  { id: "complementos-ilustrados", label: "Complementos Ilustrados" },
   { id: "gerais", label: "Perguntas Gerais" }
 ];
 
@@ -235,7 +289,7 @@ const FAQPage = () => {
       const hash = window.location.hash.replace("#", "");
       if (hash) {
         // If it's a category
-        const isCategory = ["identidade-visual", "instagram-estrategico", "presenca-digital", "gerais"].includes(hash);
+        const isCategory = categories.some(cat => cat.id !== "all" && cat.id === hash);
         if (isCategory) {
           setActiveTab(hash);
           // Find first FAQ in that category
@@ -485,7 +539,7 @@ const FAQPage = () => {
               </div>
 
               {/* WhatsApp Conversion Section */}
-              <section className="mt-16 bg-gradient-to-br from-[#443A94] to-[#FA7C9C] rounded-3xl p-8 md:p-12 text-white text-center shadow-lg relative overflow-hidden">
+              <section className="mt-16 bg-[#443A94] rounded-3xl p-8 md:p-12 text-white text-center shadow-lg relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl pointer-events-none" />
                 <h2 className="text-xl md:text-2xl font-display font-normal mb-4">
                   Ainda tem alguma dúvida particular?
