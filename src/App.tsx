@@ -15,6 +15,9 @@ import InstagramEstrategicoPage from "./pages/InstagramEstrategicoPage";
 import PresencaDigitalPage from "./pages/PresencaDigitalPage";
 import PortfolioPage from "./pages/PortfolioPage";
 import ComplementosIlustradosPage from "./pages/ComplementosIlustradosPage";
+import MateriaisGraficosPage from "./pages/MateriaisGraficosPage";
+import GestaoRedesPage from "./pages/GestaoRedesPage";
+import GestaoLeadsPage from "./pages/GestaoLeadsPage";
 import CaseStudyPage from "./pages/CaseStudyPage";
 import ProcessoPage from "./pages/ProcessoPage";
 import FAQPage from "./pages/FAQPage";
@@ -41,6 +44,9 @@ const App = () => (
             <Route path="/servicos/presenca-digital" element={<PresencaDigitalPage />} />
             <Route path="/servicos/portfolio" element={<PortfolioPage />} />
             <Route path="/servicos/complementos-ilustrados" element={<ComplementosIlustradosPage />} />
+            <Route path="/servicos/materiais-graficos" element={<MateriaisGraficosPage />} />
+            <Route path="/servicos/gestao-de-redes-sociais" element={<GestaoRedesPage />} />
+            <Route path="/servicos/gestao-de-leads" element={<GestaoLeadsPage />} />
             <Route path="/projetos/:slug" element={<CaseStudyPage />} />
             <Route path="/processo" element={<ProcessoPage />} />
             <Route path="/faq" element={<FAQPage />} />

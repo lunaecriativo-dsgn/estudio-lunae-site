@@ -4,6 +4,7 @@ import { ChevronRight, Home, Send, MessageCircle, Mail, MapPin, Sparkles, CheckC
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import { opcoesFormulario } from "@/data/servicos";
 
 const ContatoPage = () => {
   const [nome, setNome] = useState("");
@@ -197,7 +198,7 @@ const ContatoPage = () => {
 
                       <div className="space-y-1.5">
                         <label htmlFor="service-select" className="font-body text-xs font-semibold text-primary block">
-                          Serviço de Maior Interesse
+                          Serviço de interesse
                         </label>
                         <select
                           id="service-select"
@@ -206,15 +207,13 @@ const ContatoPage = () => {
                           className="w-full font-body text-sm px-4 py-3 bg-white border border-[#443A94]/15 rounded-xl focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary"
                         >
                           <option value="">Selecione um serviço...</option>
-                          <option value="Identidade Visual">Identidade Visual</option>
-                          <option value="Instagram Estratégico">Instagram Estratégico</option>
-                          <option value="Portfólio">Portfólio</option>
-                          <option value="Complementos Ilustrados">Complementos Ilustrados</option>
-                          <option value="Sites Institucionais">Sites Institucionais</option>
-                          <option value="Landing Pages">Landing Pages de Conversão</option>
-                          <option value="UX/UI Design">UX/UI Design e Figma</option>
-                          <option value="Combo Completo">Combo Completo Lunae</option>
+                          {opcoesFormulario.map((opcao) => (
+                            <option key={opcao} value={opcao}>{opcao}</option>
+                          ))}
                         </select>
+                        <p className="font-body text-xs text-muted-foreground font-light">
+                          Nosso orçamento é modular: você paga só pelos itens que escolher, e o que se repete entre serviços não é cobrado de novo. Quer mais de um? Escolha “Mais de um serviço” e conte na mensagem.
+                        </p>
                       </div>
 
                       <div className="space-y-1.5">

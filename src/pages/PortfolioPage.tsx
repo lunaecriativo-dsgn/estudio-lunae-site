@@ -1,33 +1,21 @@
 import React from "react";
-import { CheckCircle2, FileText, Globe } from "lucide-react";
+import { FileText, Globe } from "lucide-react";
 import ServicePageShell from "@/components/ServicePageShell";
+import { ObjectiveBox, SectionHead, ItemCard, ItemGrid, NoteBox, CrossLink } from "@/components/ServiceBlocks";
 
-interface Item {
-  title: string;
-  text: string;
-}
-
-const documentItems: Item[] = [
+const documentItems = [
   { title: "Curadoria de projetos", text: "Conversa de diagnóstico e seleção de 5 a 8 projetos." },
   { title: "Textos de apresentação", text: "Bio, “sobre mim” e descrição de cada projeto." },
   { title: "Diagramação", text: "Capa, projetos e contato, em PDF e arquivo editável." },
 ];
 
-const siteItems: Item[] = [
+const siteItems = [
   { title: "Curadoria e textos", text: "Seleção dos projetos, bio e descrição de cada case." },
   { title: "Projeto UX/UI", text: "Estrutura, wireframe e protótipo no Figma." },
   { title: "Desenvolvimento", text: "Site responsivo, pra computador e celular." },
   { title: "SEO básico e domínio", text: "Títulos, descrições e configuração inicial." },
   { title: "Suporte inicial", text: "1 mês de pequenos ajustes." },
 ];
-
-const ItemCard: React.FC<Item> = ({ title, text }) => (
-  <div className="p-6 bg-white rounded-2xl border border-[#443A94]/5 shadow-sm space-y-3">
-    <CheckCircle2 className="w-6 h-6 text-secondary" />
-    <h4 className="text-lg font-display font-normal text-primary">{title}</h4>
-    <p className="font-body text-xs md:text-sm text-muted-foreground font-light leading-relaxed">{text}</p>
-  </div>
-);
 
 const PortfolioPage = () => (
   <ServicePageShell
@@ -44,27 +32,13 @@ const PortfolioPage = () => (
     ctaButton="Quero meu portfólio ✦"
     whatsappMessage="Olá! Gostaria de montar o portfólio do meu trabalho com a equipe da Lunae."
   >
-    {/* Objective */}
-    <section className="mb-20 p-8 md:p-12 rounded-3xl bg-[#443A94]/5 border border-[#443A94]/10">
-      <span className="font-body font-bold text-secondary tracking-widest uppercase text-xs block mb-3">
-        🎯 OBJETIVO DO SERVIÇO
-      </span>
-      <h2 className="text-2xl md:text-3xl font-display font-normal text-primary mb-4">
-        Mostre seu trabalho do jeito que ele merece
-      </h2>
-      <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed font-light">
-        Um portfólio organizado ajuda quem chega a entender rápido o que você faz e a confiar no seu trabalho.
-      </p>
-    </section>
+    <ObjectiveBox
+      title="Mostre seu trabalho do jeito que ele merece"
+      text="Um portfólio organizado ajuda quem chega a entender rápido o que você faz e a confiar no seu trabalho."
+    />
 
-    {/* Formats */}
     <section className="mb-12">
-      <span className="font-body font-bold text-[#443A94] tracking-widest uppercase text-xs block mb-3">
-        ✦ DOIS FORMATOS
-      </span>
-      <h2 className="text-3xl md:text-4xl font-display font-normal text-primary mb-10">
-        Escolha o que faz sentido agora
-      </h2>
+      <SectionHead eyebrow="✦ DOIS FORMATOS" title="Escolha o que faz sentido agora" />
 
       <div className="space-y-14">
         <div>
@@ -74,9 +48,11 @@ const PortfolioPage = () => (
           <p className="font-body text-sm text-muted-foreground font-light mb-6">
             Um PDF pronto pra enviar por e-mail ou WhatsApp.
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {documentItems.map((item) => <ItemCard key={item.title} {...item} />)}
-          </div>
+          <ItemGrid>
+            {documentItems.map((item) => (
+              <ItemCard key={item.title} {...item} />
+            ))}
+          </ItemGrid>
         </div>
 
         <div>
@@ -86,18 +62,34 @@ const PortfolioPage = () => (
           <p className="font-body text-sm text-muted-foreground font-light mb-6">
             Um endereço seu, que qualquer pessoa acessa e que aparece no Google.
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {siteItems.map((item) => <ItemCard key={item.title} {...item} />)}
-          </div>
+          <ItemGrid>
+            {siteItems.map((item) => (
+              <ItemCard key={item.title} {...item} />
+            ))}
+          </ItemGrid>
         </div>
       </div>
     </section>
 
-    {/* Note */}
-    <div className="mb-20 p-6 bg-secondary/5 rounded-2xl border border-secondary/10 font-body text-sm text-muted-foreground max-w-4xl">
-      <span className="font-bold text-primary block mb-1">✦ Quer os dois?</span>
+    <NoteBox title="Precisa de identidade visual?">
+      Se precisar de identidade visual e elementos gráficos, a gente soma esses itens de forma modular, cada serviço do
+      pacote com o seu valor.
+    </NoteBox>
+
+    <NoteBox title="Quer os dois?">
       Escolhendo documento e site, a curadoria e os textos entram uma vez só.
-    </div>
+    </NoteBox>
+
+    <NoteBox title="Atualiza com frequência?">
+      No pacote mensal, o portfólio ganha novos projetos a cada mês.
+    </NoteBox>
+
+    <CrossLink
+      to="/servicos/complementos-ilustrados"
+      title="Quer uma persona ou ilustrações no portfólio?"
+      text="Persona ilustrada e ilustrações para site combinam com o portfólio."
+      cta="Ver Complementos Ilustrados"
+    />
   </ServicePageShell>
 );
 

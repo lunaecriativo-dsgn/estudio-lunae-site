@@ -8,7 +8,7 @@ import SEO from "@/components/SEO";
 
 interface FAQItem {
   id: string;
-  category: "identidade-visual" | "instagram-estrategico" | "presenca-digital" | "portfolio" | "complementos-ilustrados" | "gerais";
+  category: "identidade-visual" | "instagram-estrategico" | "presenca-digital" | "portfolio" | "complementos-ilustrados" | "materiais-graficos" | "gestao-de-redes-sociais" | "gestao-de-leads" | "gerais";
   question: string;
   answer: string;
 }
@@ -25,7 +25,13 @@ const allFaqs: FAQItem[] = [
     id: "cria-apenas-logotipo",
     category: "identidade-visual",
     question: "Vocês criam apenas o logotipo?",
-    answer: "Não. Entregamos o pacote completo:\n* Variações do logotipo\n* Paleta de cores e tipografia\n* Elementos gráficos de apoio\n* Manual de marca fácil de seguir"
+    answer: "Não precisa. Você escolhe: só o logo ou o pacote completo.\n* Estudo de cores e tipografia\n* Logotipo (até 2 propostas)\n* Elementos gráficos de apoio\n* Manual da marca\n* Templates para Instagram"
+  },
+  {
+    id: "ja-tenho-identidade-pecas-novas",
+    category: "identidade-visual",
+    question: "Já tenho identidade. Vocês fazem só peças novas?",
+    answer: "Sim. Em Extensões da marca, criamos o logo de uma submarca (linha de produto, unidade ou evento) e pacotes de 5 templates novos, sempre dentro da identidade que você já tem."
   },
   {
     id: "tempo-identidade-visual",
@@ -57,7 +63,19 @@ const allFaqs: FAQItem[] = [
     id: "como-funciona-calendario",
     category: "instagram-estrategico",
     question: "Como funciona o calendário de conteúdo?",
-    answer: "Um roteiro de **30 dias** com o que postar no feed e nos stories, organizado por objetivo: autoridade, conexão, venda e educação. Sem mais dúvida sobre o que publicar."
+    answer: "Um planejamento de **30 dias** com **12 conteúdos** (cerca de 3 por semana). Cada um vem com tema, legenda-base e chamada para ação (CTA), organizados por objetivo: autoridade, conexão, venda e educação."
+  },
+  {
+    id: "artes-avulsas-instagram",
+    category: "instagram-estrategico",
+    question: "Vocês criam só as artes dos posts?",
+    answer: "Sim. Nas artes avulsas, criamos 1 post, story ou banner, ou um pacote de 10 artes, sempre dentro da sua identidade. Você mesma publica."
+  },
+  {
+    id: "instagram-sem-identidade",
+    category: "instagram-estrategico",
+    question: "Ainda não tenho identidade visual. Posso contratar o Instagram Estratégico?",
+    answer: "Pode. Se precisar de identidade visual e elementos gráficos, a gente soma esses itens de forma modular, cada serviço do pacote com o seu valor."
   },
 
   // Categoria: Presença Digital
@@ -77,13 +95,25 @@ const allFaqs: FAQItem[] = [
     id: "como-funciona-hospedagem",
     category: "presenca-digital",
     question: "Como funciona a contratação de hospedagem e domínio?",
-    answer: "A gente te orienta em cada passo. Domínio e hospedagem ficam registrados no seu nome (CPF/CNPJ, você mantém a propriedade), e cuidamos de toda a parte técnica pra colocar o site no ar."
+    answer: "A gente orienta e faz a configuração inicial. Domínio e hospedagem ficam registrados no seu nome (você mantém a propriedade) e os custos são pagos por você, direto ao serviço."
   },
   {
     id: "contratar-apenas-site",
     category: "presenca-digital",
     question: "Já tenho identidade visual pronta. Posso contratar apenas o site?",
     answer: "Sim! Aplicamos suas cores e fontes já existentes, com foco total em usabilidade no novo site."
+  },
+  {
+    id: "suporte-depois-do-site",
+    category: "presenca-digital",
+    question: "O site tem suporte depois de pronto?",
+    answer: "Sim. Você conta com até **3 meses** de suporte e pequenos ajustes depois da entrega."
+  },
+  {
+    id: "site-sem-identidade",
+    category: "presenca-digital",
+    question: "Não tenho identidade visual. Posso contratar o site?",
+    answer: "Pode. Se precisar de identidade visual e elementos gráficos, a gente soma esses itens de forma modular, cada serviço do pacote com o seu valor."
   },
 
   // Categoria: Portfólio
@@ -111,6 +141,18 @@ const allFaqs: FAQItem[] = [
     question: "Posso contratar o portfólio em documento e em site?",
     answer: "Sim. Nos dois formatos, a curadoria e os textos entram uma vez só."
   },
+  {
+    id: "portfolio-atualizar-todo-mes",
+    category: "portfolio",
+    question: "Posso atualizar o portfólio todo mês?",
+    answer: "Pode. No pacote mensal, o portfólio ganha novos projetos a cada mês."
+  },
+  {
+    id: "portfolio-sem-identidade",
+    category: "portfolio",
+    question: "Não tenho identidade visual. Posso fazer o portfólio?",
+    answer: "Pode. Se precisar de identidade visual e elementos gráficos, a gente soma esses itens de forma modular, cada serviço do pacote com o seu valor."
+  },
 
   // Categoria: Complementos Ilustrados
   {
@@ -132,10 +174,148 @@ const allFaqs: FAQItem[] = [
     answer: "Prontas, em PNG ou SVG. Os textos e layouts que acompanham as peças ficam editáveis."
   },
   {
+    id: "complementos-editar-depois",
+    category: "complementos-ilustrados",
+    question: "Vou conseguir editar meu conteúdo depois?",
+    answer: "Os textos e layouts que acompanham as peças ficam editáveis. As ilustrações vêm prontas, em PNG ou SVG, e não são editáveis. Se quiser mudar uma ilustração, a gente refaz com você."
+  },
+  {
     id: "complementos-carrossel",
     category: "complementos-ilustrados",
     question: "Quantas lâminas tem um carrossel?",
     answer: "Até 8 lâminas ilustradas, com roteiro e textos editáveis. Também temos o pacote com 3 carrosséis na mesma linguagem visual."
+  },
+
+  // Categoria: Materiais Gráficos
+  {
+    id: "materiais-impressao-inclusa",
+    category: "materiais-graficos",
+    question: "A impressão está inclusa?",
+    answer: "Não. A impressão é paga direto à gráfica. A gente indica gráficas e confere a prova antes de imprimir."
+  },
+  {
+    id: "materiais-formato-arquivos",
+    category: "materiais-graficos",
+    question: "Em que formato recebo os arquivos?",
+    answer: "PDF em alta resolução, pronto pra gráfica, e PNG pra usar no digital. Cardápio e flyer podem vir em versão editável, pra você trocar preços e itens quando precisar."
+  },
+  {
+    id: "materiais-cardapio",
+    category: "materiais-graficos",
+    question: "Vocês fazem cardápio pra qualquer negócio?",
+    answer: "Fazemos cardápios de até 4 páginas ou painéis, pra restaurantes, cafés, confeitarias e similares. Cada página a mais é um item extra."
+  },
+  {
+    id: "materiais-ilustracao-exclusiva",
+    category: "materiais-graficos",
+    question: "Posso ter ilustrações exclusivas na peça?",
+    answer: "Pode. As ilustrações exclusivas são contratadas à parte, nos Complementos Ilustrados."
+  },
+  {
+    id: "materiais-sem-identidade",
+    category: "materiais-graficos",
+    question: "Preciso ter identidade visual pra pedir os materiais?",
+    answer: "Se precisar de identidade visual e elementos gráficos, a gente soma esses itens de forma modular, cada serviço do pacote com o seu valor."
+  },
+  {
+    id: "materiais-todo-mes",
+    category: "materiais-graficos",
+    question: "Posso receber peças todo mês?",
+    answer: "Pode, no pacote mensal. Ele é ideal pra quem troca o cardápio por estação, faz eventos ou distribui material com frequência."
+  },
+
+  // Categoria: Gestão de Redes Sociais
+  {
+    id: "gestao-voces-postam-por-mim",
+    category: "gestao-de-redes-sociais",
+    question: "Vocês postam por mim?",
+    answer: "Sim. Na Gestão de Redes Sociais, a gente planeja, cria e publica seus conteúdos todo mês, conforme o plano que você escolher."
+  },
+  {
+    id: "gestao-diferenca-planos",
+    category: "gestao-de-redes-sociais",
+    question: "Qual a diferença entre os planos?",
+    answer: "* **Constante:** 8 posts no mês, com legendas, agendamento e relatório mensal simples\n* **Presença:** 12 posts (com até 4 reels), stories 3 vezes por semana e relatório mensal\n* **Presença+:** 16 posts (com até 6 reels), stories 5 vezes por semana, respostas a comentários e direct em horário comercial e reunião mensal de resultados"
+  },
+  {
+    id: "gestao-implantacao",
+    category: "gestao-de-redes-sociais",
+    question: "O que é a implantação?",
+    answer: "É o que fazemos antes do primeiro mês, em duas partes. A **base** vale pra todo mundo: diagnóstico do perfil, bio, pilares de conteúdo e tom de voz e capas dos destaques. Depois você escolhe a versão: com identidade visual, adaptamos os seus templates; sem identidade visual, criamos as cores, as fontes e os templates do zero."
+  },
+  {
+    id: "gestao-implantacao-sem-cobrar-duas-vezes",
+    category: "gestao-de-redes-sociais",
+    question: "Se eu já contratei algum item, pago de novo na implantação?",
+    answer: "Não. Se você já contratou algum item em outro serviço, ele sai da conta. Se precisar de logo, é só somar a criação de logotipo da Identidade Visual."
+  },
+  {
+    id: "gestao-quanto-tempo",
+    category: "gestao-de-redes-sociais",
+    question: "Preciso ficar quanto tempo?",
+    answer: "O contrato mínimo é de **3 meses**, com renovação automática. Pra encerrar, é só avisar até 20 dias antes do fim do período."
+  },
+  {
+    id: "gestao-fotos-videos",
+    category: "gestao-de-redes-sociais",
+    question: "Quem envia as fotos e os vídeos?",
+    answer: "Você. A gente edita e publica a partir do seu material. A captação presencial de fotos e vídeos não está inclusa."
+  },
+  {
+    id: "gestao-trafego-pago",
+    category: "gestao-de-redes-sociais",
+    question: "Vocês fazem tráfego pago?",
+    answer: "Não. Tráfego pago, captação presencial e influenciadores não estão inclusos."
+  },
+  {
+    id: "gestao-garantia-resultado",
+    category: "gestao-de-redes-sociais",
+    question: "Vocês garantem seguidores ou vendas?",
+    answer: "Não. Nosso compromisso é com constância e qualidade. Número de seguidores e vendas dependem de muitos fatores."
+  },
+  {
+    id: "gestao-pecas-extras",
+    category: "gestao-de-redes-sociais",
+    question: "Posso pedir peças além do plano?",
+    answer: "Pode. Posts avulsos, carrosséis, pacotes de posts e edição de reels entram como extras, cobrados junto com a mensalidade do mês em que forem feitos."
+  },
+
+  // Categoria: Gestão de Leads
+  {
+    id: "leads-o-que-e",
+    category: "gestao-de-leads",
+    question: "O que é a Gestão de Leads?",
+    answer: "É a organização de quem chega até você pelo Instagram, site ou WhatsApp. Assim, nenhum contato se perde e você sabe quem atender, quando e em que etapa cada pessoa está."
+  },
+  {
+    id: "leads-precisa-de-crm",
+    category: "gestao-de-leads",
+    question: "Preciso de um sistema ou CRM pago?",
+    answer: "Não. Usamos ferramentas que já existem: planilha, Trello, WhatsApp Business ou um CRM. Se você escolher uma assinatura paga, o custo é seu."
+  },
+  {
+    id: "leads-fecham-vendas",
+    category: "gestao-de-leads",
+    question: "Vocês fecham as vendas por mim?",
+    answer: "Não. A negociação e o fechamento continuam com você. A gente organiza e encaminha."
+  },
+  {
+    id: "leads-implantacao",
+    category: "gestao-de-leads",
+    question: "O que vem na implantação?",
+    answer: "Um projeto único, com:\n* Mapeamento da jornada dos contatos\n* Estrutura do funil (quadro ou CRM, etiquetas no WhatsApp Business e link na bio)\n* Roteiros de atendimento\n* Treinamento da equipe (1 encontro online de até 1h30 e guia em PDF)"
+  },
+  {
+    id: "leads-organizacao-ou-primeiro-atendimento",
+    category: "gestao-de-leads",
+    question: "Qual a diferença entre Organização e Primeiro atendimento?",
+    answer: "Na **Organização**, sua equipe responde os contatos e a gente revisa o funil toda semana, aponta contatos parados e envia um relatório mensal. No **Primeiro atendimento**, a gente faz a primeira resposta em horário comercial, qualifica e encaminha pra pessoa certa da sua equipe (até 150 contatos por mês)."
+  },
+  {
+    id: "leads-prazo-e-junto-redes",
+    category: "gestao-de-leads",
+    question: "O acompanhamento mensal tem prazo? Dá pra contratar junto com a gestão de redes?",
+    answer: "O acompanhamento mensal tem contrato mínimo de 3 meses, com renovação automática. Pra encerrar, avise até 20 dias antes do fim do período. Contratando junto com a Gestão de Redes Sociais, as mensalidades têm condição especial."
   },
 
   // Categoria: Perguntas Gerais
@@ -143,13 +323,43 @@ const allFaqs: FAQItem[] = [
     id: "como-funciona-orcamento",
     category: "gerais",
     question: "Como funciona o orçamento?",
-    answer: "Personalizado e transparente. Avaliamos seu momento atual e mostramos onde investir primeiro, com valor detalhado por módulo, sem surpresa."
+    answer: "Nosso orçamento é modular: cada item tem preço próprio. A gente conversa, escolhe junto com você os serviços que fazem sentido agora e envia uma proposta com a soma só dos itens escolhidos. Você escolhe como pagar."
   },
   {
     id: "contratar-apenas-uma-entrega",
     category: "gerais",
     question: "Posso contratar apenas uma entrega (modelo modular)?",
-    answer: "Sim, trabalhamos por módulo. Comece pelo que faz mais sentido agora (logo, Instagram ou site) e expanda quando quiser."
+    answer: "Sim, todos os nossos serviços são modulares. Você leva só o que precisa, um item ou vários, e paga só por eles. Se um item aparece em mais de um serviço, ele é cobrado uma vez só."
+  },
+  {
+    id: "servico-repetido-em-pacotes",
+    category: "gerais",
+    question: "Se um serviço aparece em mais de um pacote, pago duas vezes?",
+    answer: "Não. Ele é cobrado uma vez só. Por exemplo, os templates fazem parte da Identidade Visual e do Instagram Estratégico: contratando os dois, entram uma vez só. O mesmo vale pra diagnóstico do perfil, bio e capas dos destaques (Instagram Estratégico e implantação da Gestão de Redes) e pra curadoria e textos do Portfólio."
+  },
+  {
+    id: "servico-precisa-de-outro-pacote",
+    category: "gerais",
+    question: "E se meu serviço precisar de itens de outro serviço?",
+    answer: "Esses itens entram de forma modular, pelo valor do serviço de origem. Por exemplo: se você quer o Instagram, o site ou o portfólio, mas ainda não tem identidade visual, o estudo de cores e tipografia e os elementos gráficos são cobrados da Identidade Visual. Por isso o valor final pode variar conforme o que você precisar."
+  },
+  {
+    id: "o-que-e-pacote-mensal",
+    category: "gerais",
+    question: "O que é o pacote mensal?",
+    answer: "É pra quem precisa do mesmo serviço com frequência. Você recebe o item escolhido todo mês, como novos templates, logos de submarcas ou artes de rotina, com condição especial. O contrato mínimo é de 3 meses, com renovação automática. Pra encerrar, avise até 20 dias antes do fim do período."
+  },
+  {
+    id: "rodadas-de-ajuste",
+    category: "gerais",
+    question: "Quantas rodadas de ajuste eu tenho?",
+    answer: "Até 2 rodadas na identidade, no protótipo do site, nos templates, nas ilustrações e nos materiais gráficos. Na Gestão de Redes Sociais, 1 rodada por post."
+  },
+  {
+    id: "custos-nao-inclusos",
+    category: "gerais",
+    question: "Quais custos não estão inclusos?",
+    answer: "Domínio, hospedagem, ferramentas pagas de terceiros e impressão gráfica. Esses custos são seus e pagos direto a cada serviço."
   },
   {
     id: "nunca-trabalhei-com-designer",
@@ -242,6 +452,9 @@ const categories = [
   { id: "presenca-digital", label: "Presença Digital" },
   { id: "portfolio", label: "Portfólio" },
   { id: "complementos-ilustrados", label: "Complementos Ilustrados" },
+  { id: "materiais-graficos", label: "Materiais Gráficos" },
+  { id: "gestao-de-redes-sociais", label: "Gestão de Redes Sociais" },
+  { id: "gestao-de-leads", label: "Gestão de Leads" },
   { id: "gerais", label: "Perguntas Gerais" }
 ];
 

@@ -4,13 +4,14 @@ import { ChevronRight, Home, Sparkles, AlertCircle, CheckCircle2, ArrowRight } f
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import { SectionHead, ItemCard, ItemGrid, NoteBox, CrossLink, ModularNote } from "@/components/ServiceBlocks";
 
 const IdentidadeVisualPage = () => {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Identidade Visual | Lunae",
-    "description": "Criação de marcas completas, logotipos autorais, paletas de cores sofisticadas, tipografias, manual de identidade e templates estratégicos no Canva.",
+    "description": "Criação de marcas completas: estudo de cores e tipografia, logotipo autoral, elementos gráficos, manual da marca e templates para Instagram.",
     "brand": {
       "@type": "Brand",
       "name": "Lunae"
@@ -21,7 +22,7 @@ const IdentidadeVisualPage = () => {
     <>
       <SEO 
         title="Identidade Visual | Lunae Estúdio Criativo" 
-        description="Seja reconhecida como referência máxima no seu nicho. Criamos logotipos, grafismos e manuais de marcas autênticos e memoráveis."
+        description="Uma marca com a sua cara. Criamos cores, tipografia, logo, elementos gráficos, manual e templates pra você usar tudo com segurança."
         schema={serviceSchema}
       />
 
@@ -98,7 +99,7 @@ const IdentidadeVisualPage = () => {
               {/* Objective Section */}
               <section className="mb-20 p-8 md:p-12 rounded-3xl bg-[#443A94]/5 border border-[#443A94]/10">
                 <span className="font-body font-bold text-secondary tracking-widest uppercase text-xs block mb-3">
-                  🎯 OBJETIVO DO PACOTE
+                  🎯 OBJETIVO DO SERVIÇO
                 </span>
                 <h2 className="text-2xl md:text-3xl font-display font-normal text-primary mb-4">
                   Reconhecimento e valorização profissional
@@ -108,57 +109,48 @@ const IdentidadeVisualPage = () => {
                 </p>
               </section>
 
-              {/* How Lunae Solves */}
+              {/* Entregas */}
               <section className="mb-20">
-                <span className="font-body font-bold text-[#443A94] tracking-widest uppercase text-xs block mb-3">
-                  ✦ ENTREGAS DO PACOTE
-                </span>
-                <h2 className="text-3xl md:text-4xl font-display font-normal text-primary mb-6">
-                  O que está incluso
-                </h2>
+                <SectionHead
+                  eyebrow="✦ O QUE VOCÊ PODE ESCOLHER"
+                  title="Cinco itens, uma marca só"
+                  text="Cada item pode ser contratado separadamente. Você leva o pacote completo ou só o que precisa agora."
+                />
+                <ItemGrid>
+                  <ItemCard title="Estudo de cores e tipografia" text="Pesquisa visual e definição da paleta de cores e das fontes da marca." />
+                  <ItemCard title="Criação de logotipo" text="Até 2 propostas de logo e refinamento da versão escolhida." />
+                  <ItemCard title="Elementos gráficos de apoio" text="Ícones, padrões, formas e elementos que completam a identidade." />
+                  <ItemCard title="Manual da marca" text="Guia editável com aplicações, cores, tipografia e exemplos de uso." />
+                  <ItemCard title="Templates para Instagram" text="10 a 15 templates editáveis para feed e stories." />
+                </ItemGrid>
+              </section>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  <div className="p-6 bg-white rounded-2xl border border-[#443A94]/5 shadow-sm space-y-3">
-                    <CheckCircle2 className="w-6 h-6 text-secondary" />
-                    <h3 className="text-lg font-display font-normal text-primary">Cores e tipografia</h3>
-                    <p className="font-body text-xs md:text-sm text-muted-foreground font-light leading-relaxed">
-                      Uma paleta e fontes que transmitem exatamente o profissionalismo que você tem.
-                    </p>
-                  </div>
-
-                  <div className="p-6 bg-white rounded-2xl border border-[#443A94]/5 shadow-sm space-y-3">
-                    <CheckCircle2 className="w-6 h-6 text-secondary" />
-                    <h3 className="text-lg font-display font-normal text-primary">Logotipo autoral</h3>
-                    <p className="font-body text-xs md:text-sm text-muted-foreground font-light leading-relaxed">
-                      Sob medida, com variações prontas para perfil, impressos e assinatura.
-                    </p>
-                  </div>
-
-                  <div className="p-6 bg-white rounded-2xl border border-[#443A94]/5 shadow-sm space-y-3">
-                    <CheckCircle2 className="w-6 h-6 text-secondary" />
-                    <h3 className="text-lg font-display font-normal text-primary">Elementos gráficos</h3>
-                    <p className="font-body text-xs md:text-sm text-muted-foreground font-light leading-relaxed">
-                      Ícones, texturas e grafismos que dão ritmo e identidade às suas peças.
-                    </p>
-                  </div>
-
-                  <div className="p-6 bg-white rounded-2xl border border-[#443A94]/5 shadow-sm space-y-3">
-                    <CheckCircle2 className="w-6 h-6 text-secondary" />
-                    <h3 className="text-lg font-display font-normal text-primary">Manual da marca</h3>
-                    <p className="font-body text-xs md:text-sm text-muted-foreground font-light leading-relaxed">
-                      Guia simples para você usar tudo sozinha, sem errar.
-                    </p>
-                  </div>
-
-                  <div className="p-6 bg-white rounded-2xl border border-[#443A94]/5 shadow-sm space-y-3">
-                    <CheckCircle2 className="w-6 h-6 text-secondary" />
-                    <h3 className="text-lg font-display font-normal text-primary">Templates para Instagram</h3>
-                    <p className="font-body text-xs md:text-sm text-muted-foreground font-light leading-relaxed">
-                      Layouts prontos e editáveis, alinhados à sua nova marca.
-                    </p>
-                  </div>
+              {/* Extensões da marca */}
+              <section className="mb-12">
+                <SectionHead
+                  eyebrow="✦ EXTENSÕES DA MARCA"
+                  title="Já tem identidade e precisa de mais peças?"
+                  text="Criamos novas peças dentro da identidade que você já tem."
+                />
+                <div className="grid md:grid-cols-2 gap-8 max-w-3xl">
+                  <ItemCard badge="Novo" title="Logo para submarca" text="Logo derivado da marca principal, para linha de produto, unidade ou evento." />
+                  <ItemCard badge="Novo" title="Templates adicionais" text="Pacote de 5 templates novos, dentro da identidade existente." />
                 </div>
               </section>
+
+              <NoteBox title="Revisões e pacote mensal">
+                Até 2 rodadas de ajuste na identidade e 2 nos templates. Precisa de novos templates ou logos de submarca
+                todo mês? O pacote mensal entrega o item que você escolher, com condição especial.
+              </NoteBox>
+
+              <CrossLink
+                to="/servicos/complementos-ilustrados"
+                title="Quer ilustrações na sua identidade?"
+                text="Persona, personagem da marca e ícones personalizados combinam com a Identidade Visual."
+                cta="Ver Complementos Ilustrados"
+              />
+
+              <ModularNote />
 
               {/* Centralized FAQ Redirect Section */}
               <section className="mb-20 text-center max-w-2xl mx-auto px-6 py-8 rounded-3xl bg-[#443A94]/5 border border-[#443A94]/10">

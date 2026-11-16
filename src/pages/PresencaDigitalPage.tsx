@@ -4,13 +4,14 @@ import { ChevronRight, Home, Globe, AlertCircle, CheckCircle2, ArrowRight } from
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import { SectionHead, ItemCard, ItemGrid, NoteBox, CrossLink, ModularNote } from "@/components/ServiceBlocks";
 
 const PresencaDigitalPage = () => {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "Presença Digital Completa | Lunae",
-    "description": "Desenvolvimento de presença digital integrada por meio de estratégia, UX, sites institucionais, landing pages e otimização para mecanismos de busca.",
+    "name": "Presença Digital | Lunae",
+    "description": "Projeto UX/UI, desenvolvimento de site institucional ou landing page, SEO básico, domínio e hospedagem e manutenção inicial.",
     "brand": {
       "@type": "Brand",
       "name": "Lunae"
@@ -20,8 +21,8 @@ const PresencaDigitalPage = () => {
   return (
     <>
       <SEO 
-        title="Presença Digital Completa | Lunae Estúdio Criativo" 
-        description="Construa sua residência digital definitiva. Desenvolvemos sites institucionais e estratégias de UX para sua marca transmitir confiança e crescer."
+        title="Presença Digital | Lunae Estúdio Criativo" 
+        description="Um endereço seu no digital. Criamos sites institucionais e landing pages pra que as pessoas entendam rápido quem você é e como falar com você."
         schema={serviceSchema}
       />
 
@@ -98,7 +99,7 @@ const PresencaDigitalPage = () => {
               {/* Objective Section */}
               <section className="mb-20 p-8 md:p-12 rounded-3xl bg-[#443A94]/5 border border-[#443A94]/10" id="presenca-digital-objective">
                 <span className="font-body font-bold text-secondary tracking-widest uppercase text-xs block mb-3">
-                  🎯 OBJETIVO DO PACOTE
+                  🎯 OBJETIVO DO SERVIÇO
                 </span>
                 <h2 className="text-2xl md:text-3xl font-display font-normal text-primary mb-4">
                   Estabilidade e confiança, direto no Google
@@ -108,63 +109,45 @@ const PresencaDigitalPage = () => {
                 </p>
               </section>
 
-              {/* Clarification Box */}
-              <div className="mb-12 p-6 bg-secondary/5 rounded-2xl border border-secondary/10 font-body text-sm text-muted-foreground max-w-4xl">
-                <span className="font-bold text-primary block mb-1">✦ Nota de Posicionamento</span>
-                UX/UI, site, SEO, domínio e hospedagem não são vendidos separados, fazem parte de um único pacote de <strong>Presença Digital</strong>, coerente do início ao fim.
-              </div>
-
-              {/* Deliverables Section */}
-              <section className="mb-20" id="presenca-digital-deliverables">
-                <span className="font-body font-bold text-[#443A94] tracking-widest uppercase text-xs block mb-3">
-                  ✦ ENTREGAS DO PACOTE
-                </span>
-                <h2 className="text-3xl md:text-4xl font-display font-normal text-primary mb-6">
-                  O que está incluso
-                </h2>
-
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  <div className="p-6 bg-white rounded-2xl border border-[#443A94]/5 shadow-sm space-y-3">
-                    <CheckCircle2 className="w-6 h-6 text-secondary" />
-                    <h3 className="text-lg font-display font-normal text-primary">Projeto UX/UI</h3>
-                    <p className="font-body text-xs md:text-sm text-muted-foreground font-light leading-relaxed">
-                      Navegação fluida e intuitiva, pensada pro seu cliente.
-                    </p>
-                  </div>
-
-                  <div className="p-6 bg-white rounded-2xl border border-[#443A94]/5 shadow-sm space-y-3">
-                    <CheckCircle2 className="w-6 h-6 text-secondary" />
-                    <h3 className="text-lg font-display font-normal text-primary">Site ou landing page</h3>
-                    <p className="font-body text-xs md:text-sm text-muted-foreground font-light leading-relaxed">
-                      Rápido, seguro e responsivo em qualquer tela.
-                    </p>
-                  </div>
-
-                  <div className="p-6 bg-white rounded-2xl border border-[#443A94]/5 shadow-sm space-y-3">
-                    <CheckCircle2 className="w-6 h-6 text-secondary" />
-                    <h3 className="text-lg font-display font-normal text-primary">SEO básico</h3>
-                    <p className="font-body text-xs md:text-sm text-muted-foreground font-light leading-relaxed">
-                      Pra você aparecer no Google pelas palavras certas.
-                    </p>
-                  </div>
-
-                  <div className="p-6 bg-white rounded-2xl border border-[#443A94]/5 shadow-sm space-y-3">
-                    <CheckCircle2 className="w-6 h-6 text-secondary" />
-                    <h3 className="text-lg font-display font-normal text-primary">Domínio e hospedagem</h3>
-                    <p className="font-body text-xs md:text-sm text-muted-foreground font-light leading-relaxed">
-                      Registrados no seu nome (controle total é seu).
-                    </p>
-                  </div>
-
-                  <div className="p-6 bg-white rounded-2xl border border-[#443A94]/5 shadow-sm space-y-3">
-                    <CheckCircle2 className="w-6 h-6 text-secondary" />
-                    <h3 className="text-lg font-display font-normal text-primary">Manutenção inicial</h3>
-                    <p className="font-body text-xs md:text-sm text-muted-foreground font-light leading-relaxed">
-                      Suporte e atualizações de segurança por 3 meses.
-                    </p>
-                  </div>
-                </div>
+              {/* Entregas */}
+              <section className="mb-12" id="presenca-digital-deliverables">
+                <SectionHead
+                  eyebrow="✦ O QUE VOCÊ PODE ESCOLHER"
+                  title="Cinco itens pro seu site no ar"
+                  text="Cada item pode ser contratado separadamente. Você leva o pacote completo ou só o que precisa agora."
+                />
+                <ItemGrid>
+                  <ItemCard title="Projeto UX/UI" text="Briefing, pesquisa, estrutura do site, wireframe e protótipo, pra computador e celular." />
+                  <ItemCard title="Desenvolvimento" text="Construção do site, pronto pra funcionar no computador e no celular." />
+                  <ItemCard title="SEO básico" text="Estrutura inicial pro Google, com títulos e descrições." />
+                  <ItemCard title="Domínio e hospedagem" text="Orientação e configuração inicial. Ficam registrados no seu nome." />
+                  <ItemCard title="Manutenção inicial" text="Até 3 meses de suporte e pequenos ajustes." />
+                </ItemGrid>
               </section>
+
+              <NoteBox title="O que fazemos e o que fica de fora">
+                Criamos sites institucionais e landing pages. Lojas virtuais e sistemas não fazem parte. Custos de
+                domínio, hospedagem e ferramentas de terceiros não estão inclusos e são pagos por você, direto ao serviço.
+              </NoteBox>
+
+              <NoteBox title="Precisa de identidade visual?">
+                Se precisar de identidade visual e elementos gráficos, a gente soma esses itens de forma modular, cada
+                serviço do pacote com o seu valor.
+              </NoteBox>
+
+              <NoteBox title="Cria páginas com frequência?">
+                No pacote mensal, projeto, desenvolvimento e SEO servem pra quem lança novas páginas ou landing pages
+                todo mês, com condição especial.
+              </NoteBox>
+
+              <CrossLink
+                to="/servicos/portfolio"
+                title="Precisa só de um portfólio?"
+                text="Reunimos seus melhores projetos em documento ou em um site enxuto."
+                cta="Ver Portfólio"
+              />
+
+              <ModularNote />
 
               {/* Centralized FAQ Redirect Section */}
               <section className="mb-20 text-center max-w-2xl mx-auto px-6 py-8 rounded-3xl bg-[#443A94]/5 border border-[#443A94]/10">

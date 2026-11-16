@@ -4,6 +4,7 @@ import { ChevronRight, Home, Smartphone, AlertCircle, CheckCircle2, ArrowRight }
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import { SectionHead, ItemCard, ItemGrid, NoteBox, CrossLink, ModularNote } from "@/components/ServiceBlocks";
 
 const InstagramEstrategicoPage = () => {
   const serviceSchema = {
@@ -98,7 +99,7 @@ const InstagramEstrategicoPage = () => {
               {/* Objective Section */}
               <section className="mb-20 p-8 md:p-12 rounded-3xl bg-[#443A94]/5 border border-[#443A94]/10">
                 <span className="font-body font-bold text-secondary tracking-widest uppercase text-xs block mb-3">
-                  🎯 OBJETIVO DO PACOTE
+                  🎯 OBJETIVO DO SERVIÇO
                 </span>
                 <h2 className="text-2xl md:text-3xl font-display font-normal text-primary mb-4">
                   Presença marcante, rotina facilitada
@@ -108,65 +109,54 @@ const InstagramEstrategicoPage = () => {
                 </p>
               </section>
 
-              {/* How Lunae Solves */}
+              {/* Entregas */}
               <section className="mb-20">
-                <span className="font-body font-bold text-[#443A94] tracking-widest uppercase text-xs block mb-3">
-                  ✦ ENTREGAS DO PACOTE
-                </span>
-                <h2 className="text-3xl md:text-4xl font-display font-normal text-primary mb-6">
-                  O que está incluso
-                </h2>
+                <SectionHead
+                  eyebrow="✦ O QUE VOCÊ PODE ESCOLHER"
+                  title="Seis itens pro seu perfil funcionar"
+                  text="Cada item pode ser contratado separadamente. Você leva o pacote completo ou só o que precisa agora."
+                />
+                <ItemGrid>
+                  <ItemCard title="Diagnóstico do perfil" text="Avaliação do perfil atual e das oportunidades de melhoria." />
+                  <ItemCard title="Bio estratégica" text="Biografia clara e posicionamento pra mostrar quem você é nos primeiros segundos." />
+                  <ItemCard title="Capas para destaques" text="Capas alinhadas à identidade visual da sua marca." />
+                  <ItemCard title="Organização dos destaques" text="Estrutura dos destaques e categorias, como “Sobre mim”, “Serviços” e “Depoimentos”." />
+                  <ItemCard title="Calendário de conteúdo (30 dias)" text="12 conteúdos planejados no mês, com temas, legendas e chamadas para ação." />
+                  <ItemCard title="Templates" text="10 a 15 templates editáveis pra produzir seus conteúdos." />
+                </ItemGrid>
+              </section>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  <div className="p-6 bg-white rounded-2xl border border-[#443A94]/5 shadow-sm space-y-3">
-                    <CheckCircle2 className="w-6 h-6 text-secondary" />
-                    <h3 className="text-lg font-display font-normal text-primary">Diagnóstico do perfil</h3>
-                    <p className="font-body text-xs md:text-sm text-muted-foreground font-light leading-relaxed">
-                      Identificamos o que travar seu perfil hoje e onde estão as oportunidades.
-                    </p>
-                  </div>
-
-                  <div className="p-6 bg-white rounded-2xl border border-[#443A94]/5 shadow-sm space-y-3">
-                    <CheckCircle2 className="w-6 h-6 text-secondary" />
-                    <h3 className="text-lg font-display font-normal text-primary">Bio estratégica</h3>
-                    <p className="font-body text-xs md:text-sm text-muted-foreground font-light leading-relaxed">
-                      Seu posicionamento claro nos primeiros segundos de visita.
-                    </p>
-                  </div>
-
-                  <div className="p-6 bg-white rounded-2xl border border-[#443A94]/5 shadow-sm space-y-3">
-                    <CheckCircle2 className="w-6 h-6 text-secondary" />
-                    <h3 className="text-lg font-display font-normal text-primary">Capas para destaques</h3>
-                    <p className="font-body text-xs md:text-sm text-muted-foreground font-light leading-relaxed">
-                      Design padronizado, no tom e cor da sua marca.
-                    </p>
-                  </div>
-
-                  <div className="p-6 bg-white rounded-2xl border border-[#443A94]/5 shadow-sm space-y-3">
-                    <CheckCircle2 className="w-6 h-6 text-secondary" />
-                    <h3 className="text-lg font-display font-normal text-primary">Organização dos destaques</h3>
-                    <p className="font-body text-xs md:text-sm text-muted-foreground font-light leading-relaxed">
-                      Roteiro pronto para "Sobre mim", "Serviços" e "Depoimentos".
-                    </p>
-                  </div>
-
-                  <div className="p-6 bg-white rounded-2xl border border-[#443A94]/5 shadow-sm space-y-3">
-                    <CheckCircle2 className="w-6 h-6 text-secondary" />
-                    <h3 className="text-lg font-display font-normal text-primary">Calendário de 30 dias</h3>
-                    <p className="font-body text-xs md:text-sm text-muted-foreground font-light leading-relaxed">
-                      Ideias prontas pras suas primeiras 4 semanas de posts.
-                    </p>
-                  </div>
-
-                  <div className="p-6 bg-white rounded-2xl border border-[#443A94]/5 shadow-sm space-y-3">
-                    <CheckCircle2 className="w-6 h-6 text-secondary" />
-                    <h3 className="text-lg font-display font-normal text-primary">Templates Padrão</h3>
-                    <p className="font-body text-xs md:text-sm text-muted-foreground font-light leading-relaxed">
-                      Modelos feitos sob medida pro seu nicho.
-                    </p>
-                  </div>
+              {/* Artes avulsas */}
+              <section className="mb-12">
+                <SectionHead
+                  eyebrow="✦ ARTES AVULSAS"
+                  title="Posta sozinha, mas quer as peças prontas?"
+                  text="Criamos as artes dentro da sua identidade e você publica."
+                />
+                <div className="grid md:grid-cols-2 gap-8 max-w-3xl">
+                  <ItemCard badge="Novo" title="Arte avulsa" text="1 post, story ou banner dentro da sua identidade." />
+                  <ItemCard badge="Novo" title="Pacote de 10 artes" text="10 peças entre posts, stories e banners." />
                 </div>
               </section>
+
+              <NoteBox title="Precisa de identidade visual?">
+                Se precisar de identidade visual e elementos gráficos, a gente soma esses itens de forma modular, cada
+                serviço do pacote com o seu valor.
+              </NoteBox>
+
+              <NoteBox title="Identidade Visual e Instagram juntos">
+                Contratando os dois, os templates entram uma vez só. Quer o mesmo serviço todo mês? O pacote mensal
+                entrega um planejamento novo a cada mês, com condição especial.
+              </NoteBox>
+
+              <CrossLink
+                to="/servicos/gestao-de-redes-sociais"
+                title="Quer que a gente também publique?"
+                text="Na Gestão de Redes Sociais, planejamos, criamos e publicamos seus conteúdos todo mês."
+                cta="Ver Gestão de Redes Sociais"
+              />
+
+              <ModularNote />
 
               {/* Centralized FAQ Redirect Section */}
               <section className="mb-20 text-center max-w-2xl mx-auto px-6 py-8 rounded-3xl bg-[#443A94]/5 border border-[#443A94]/10">

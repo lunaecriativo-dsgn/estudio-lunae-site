@@ -1,6 +1,7 @@
 import React from "react";
 import { Sparkles } from "lucide-react";
 import ServicePageShell from "@/components/ServicePageShell";
+import { NoteBox } from "@/components/ServiceBlocks";
 
 interface Complemento {
   title: string;
@@ -100,11 +101,14 @@ const ComplementosIlustradosPage = () => (
       </div>
     </section>
 
-    {/* Note */}
-    <div className="mb-20 p-6 bg-secondary/5 rounded-2xl border border-secondary/10 font-body text-sm text-muted-foreground max-w-4xl">
-      <span className="font-bold text-primary block mb-1">✦ Como você recebe</span>
+    <NoteBox title="Como você recebe">
       As ilustrações chegam prontas, em PNG ou SVG. Os textos e layouts que acompanham as peças ficam editáveis.
-    </div>
+      Até 2 rodadas de ajuste por peça.
+    </NoteBox>
+
+    <NoteBox title="Precisa de peças novas todo mês?">
+      O pacote mensal entrega o item que você escolher a cada mês, com condição especial.
+    </NoteBox>
   </ServicePageShell>
 );
 

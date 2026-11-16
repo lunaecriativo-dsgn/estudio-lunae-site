@@ -4,6 +4,7 @@ import { ChevronRight, Home } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import { ModularNote } from "@/components/ServiceBlocks";
 
 interface ServicePageShellProps {
   seoTitle: string;
@@ -89,6 +90,8 @@ const ServicePageShell = ({
               </section>
 
               {children}
+
+              <ModularNote />
 
               {/* FAQ redirect */}
               <section className="mb-20 text-center max-w-2xl mx-auto px-6 py-8 rounded-3xl bg-[#443A94]/5 border border-[#443A94]/10">

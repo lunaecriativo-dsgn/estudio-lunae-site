@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import logoLunae from "@/assets/logos/logo-ver-bege-2026.png";
 import ThemeToggle from "@/components/ThemeToggle";
+import { todosServicos } from "@/data/servicos";
 
 interface SubItem {
   label: string;
@@ -28,13 +29,7 @@ const navItems: NavItem[] = [
   { 
     label: "Serviços", 
     href: "/servicos",
-    subItems: [
-      { label: "Identidade Visual", href: "/servicos/identidade-visual" },
-      { label: "Instagram Estratégico", href: "/servicos/instagram-estrategico" },
-      { label: "Presença Digital", href: "/servicos/presenca-digital" },
-      { label: "Portfólio", href: "/servicos/portfolio" },
-      { label: "Complementos Ilustrados", href: "/servicos/complementos-ilustrados" }
-    ]
+    subItems: todosServicos.map((s) => ({ label: s.title, href: s.url }))
   },
   { label: "Método", href: "/processo" },
   { label: "Dúvidas", href: "/faq" },
