@@ -6,10 +6,20 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { frentes } from "@/data/servicos";
 
-const passos = [
-  { n: "1", title: "Conversa", text: "A gente escuta você e entende o seu negócio." },
-  { n: "2", title: "Seleção", text: "Escolhemos juntas os serviços que fazem sentido agora." },
-  { n: "3", title: "Proposta", text: "Somamos os itens e você escolhe como pagar." },
+const etapas = [
+  { nome: "Descobrir", texto: "Conversa, briefing e diagnóstico do seu negócio." },
+  { nome: "Estruturar", texto: "Estratégia, posicionamento e organização do que será criado." },
+  { nome: "Criar", texto: "Desenvolvimento das peças, da identidade, do perfil ou do site." },
+  { nome: "Refinar", texto: "Apresentação e rodadas de ajuste com você." },
+  { nome: "Publicar", texto: "Arquivos finais, publicação e orientações de uso." },
+];
+
+const foraDoEscopo = [
+  "Lojas virtuais e sistemas",
+  "Tráfego pago e anúncios",
+  "Captação presencial de foto e vídeo",
+  "Impressão gráfica",
+  "Custos de domínio, hospedagem e ferramentas de terceiros",
 ];
 
 const ServicosPage = () => {
@@ -33,9 +43,7 @@ const ServicosPage = () => {
         schema={servicosSchema}
       />
 
-      <div
-        className="min-h-screen relative paper-bg"
-      >
+      <div className="min-h-screen relative paper-bg">
         <div className="absolute inset-0 bg-background/[0.64] pointer-events-none" />
 
         <div className="relative z-10">
@@ -43,58 +51,37 @@ const ServicosPage = () => {
 
           <main id="main-content" className="pt-28 md:pt-36 pb-20">
             <div className="max-w-6xl mx-auto px-6">
-
               {/* Breadcrumbs */}
               <nav aria-label="Breadcrumb" className="mb-10 flex items-center gap-2 text-xs md:text-sm font-body text-muted-foreground">
-                <Link to="/" className="hover:text-secondary flex items-center gap-1 transition-colors min-h-[44px] px-1 inline-flex items-center">
-                  <Home size={14} />
+                <Link to="/" className="hover:text-primary flex items-center gap-1 transition-colors min-h-[44px] px-1">
+                  <Home size={14} aria-hidden="true" />
                   Home
                 </Link>
-                <ChevronRight size={12} className="text-muted-foreground/50" />
+                <ChevronRight size={12} aria-hidden="true" className="text-muted-foreground/50" />
                 <span className="text-primary font-medium" aria-current="page">Serviços</span>
               </nav>
 
-              {/* Title Section */}
+              {/* Título */}
               <div className="text-center max-w-4xl mx-auto mb-20">
-                <span className="font-body font-bold text-secondary tracking-widest uppercase text-xs md:text-sm block mb-3">
-                  ✦ SOLUÇÕES ESTRATÉGICAS
-                </span>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-normal text-primary leading-tight mb-6">
                   Nossas Soluções
                 </h1>
                 <p className="text-lg md:text-xl font-body text-muted-foreground leading-relaxed">
-                  Tudo é modular: você leva só o que o seu negócio precisa agora.
+                  Você escolhe só o que precisa. Tudo é modular.
                 </p>
+                <Link
+                  to="#como-funciona"
+                  className="inline-flex items-center min-h-[44px] mt-2 font-body font-bold text-sm text-primary underline underline-offset-4"
+                >
+                  Como funciona a contratação
+                </Link>
               </div>
 
-              {/* Orçamento modular (destaque) */}
-              <section className="max-w-4xl mx-auto mb-20 grid md:grid-cols-2 gap-6" aria-label="Como o orçamento funciona">
-                <div className="p-6 md:p-8 rounded-2xl bg-white border border-[#443A94]/10 shadow-sm text-left">
-                  <span className="font-body font-bold text-secondary tracking-widest uppercase text-xs block mb-3">
-                    ✦ ORÇAMENTO MODULAR
-                  </span>
-                  <p className="font-body text-sm md:text-base text-primary font-medium leading-relaxed">
-                    Cada item tem preço próprio. Você recebe uma proposta com a soma só dos itens que escolher.
-                  </p>
-                </div>
-                <div className="p-6 md:p-8 rounded-2xl bg-white border border-[#443A94]/10 shadow-sm text-left">
-                  <span className="font-body font-bold text-secondary tracking-widest uppercase text-xs block mb-3">
-                    ✦ SEM COBRANÇA EM DOBRO
-                  </span>
-                  <p className="font-body text-sm md:text-base text-primary font-medium leading-relaxed">
-                    Se um mesmo serviço aparece em mais de um pacote, ele é cobrado uma vez só.
-                  </p>
-                </div>
-              </section>
-
               {/* Frentes e serviços */}
-              <div className="space-y-20 mb-20">
+              <div className="space-y-20 mb-24">
                 {frentes.map((frente) => (
                   <section key={frente.id} aria-labelledby={`frente-${frente.id}`}>
                     <div className="text-center max-w-2xl mx-auto mb-10">
-                      <span className="font-body font-bold text-[#443A94] tracking-widest uppercase text-xs block mb-3">
-                        ✦ {frente.title}
-                      </span>
                       <h2 id={`frente-${frente.id}`} className="text-3xl md:text-4xl font-display font-normal text-primary mb-3">
                         {frente.title}
                       </h2>
@@ -103,90 +90,121 @@ const ServicosPage = () => {
                       </p>
                     </div>
 
-                    <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
+                    <ul className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
                       {frente.servicos.map((sol) => {
                         const Icon = sol.icon;
                         return (
-                          <article
+                          <li
                             key={sol.id}
-                            className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)] flex flex-col justify-between p-8 rounded-3xl bg-white border border-[#443A94]/10 hover:border-secondary/30 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 text-left"
+                            className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)] flex"
                           >
-                            <div className="space-y-6">
-                              <div className="w-12 h-12 rounded-2xl bg-secondary/5 flex items-center justify-center">
-                                <Icon className="w-6 h-6 text-secondary" />
+                            <article className="flex flex-col justify-between w-full p-8 rounded-3xl bg-white border border-[#443A94]/15 hover:border-[#443A94]/40 shadow-sm hover:shadow-md transition-all duration-300 motion-safe:hover:-translate-y-1 text-left">
+                              <div className="space-y-5">
+                                <div className="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center">
+                                  <Icon aria-hidden="true" className="w-6 h-6 text-[#443A94]" />
+                                </div>
+                                <h3 className="text-xl md:text-2xl font-display font-normal text-primary leading-tight">
+                                  {sol.title}
+                                </h3>
+                                <p className="font-body text-sm text-muted-foreground leading-relaxed font-light">
+                                  {sol.short}
+                                </p>
                               </div>
 
-                              <h3 className="text-xl md:text-2xl font-display font-normal text-primary leading-tight">
-                                {sol.title}
-                              </h3>
-
-                              <p className="font-body text-sm text-muted-foreground leading-relaxed font-light">
-                                {sol.short}
-                              </p>
-                            </div>
-
-                            <div className="pt-8">
-                              <Link
-                                to={sol.url}
-                                className="inline-flex items-center gap-2 font-body font-bold text-sm text-primary hover:text-secondary transition-colors min-h-[44px]"
-                                aria-label={`Ver mais detalhes sobre ${sol.title}`}
-                              >
-                                Ver detalhes do serviço <ArrowRight size={16} />
-                              </Link>
-                            </div>
-                          </article>
+                              <div className="pt-6">
+                                <Link
+                                  to={sol.url}
+                                  className="inline-flex items-center gap-2 font-body font-bold text-sm text-primary hover:text-[#443A94] underline underline-offset-4 min-h-[44px]"
+                                  aria-label={`Ver detalhes de ${sol.title}`}
+                                >
+                                  Ver detalhes <ArrowRight size={16} aria-hidden="true" />
+                                </Link>
+                              </div>
+                            </article>
+                          </li>
                         );
                       })}
-                    </div>
+                    </ul>
                   </section>
                 ))}
               </div>
 
-              {/* Como funciona */}
-              <section className="max-w-5xl mx-auto mb-20" aria-labelledby="como-funciona">
-                <div className="text-center mb-10">
-                  <span className="font-body font-bold text-[#443A94] tracking-widest uppercase text-xs block mb-3">
-                    ✦ COMO FUNCIONA
-                  </span>
-                  <h2 id="como-funciona" className="text-3xl md:text-4xl font-display font-normal text-primary">
-                    Três passos, sem complicação
+              {/* Como funciona: único lugar do site com contrato mensal, "não cobramos duas vezes" e processo */}
+              <section id="como-funciona" className="scroll-mt-28 mb-24 max-w-5xl mx-auto" aria-labelledby="regras-titulo">
+                <div className="text-center max-w-2xl mx-auto mb-12">
+                  <h2 id="regras-titulo" className="text-3xl md:text-4xl font-display font-normal text-primary mb-3">
+                    Como funciona a contratação
                   </h2>
+                  <p className="font-body text-sm md:text-base text-muted-foreground font-light leading-relaxed">
+                    Serviços modulares: você escolhe só o que precisa agora.
+                  </p>
                 </div>
-                <div className="grid md:grid-cols-3 gap-6">
-                  {passos.map((p) => (
-                    <div key={p.n} className="p-6 rounded-2xl bg-white/70 border border-[#443A94]/10 text-left">
-                      <span className="font-display text-4xl text-secondary leading-none">{p.n}</span>
-                      <h3 className="text-xl font-display font-normal text-primary mt-2 mb-1">{p.title}</h3>
-                      <p className="font-body text-sm text-muted-foreground font-light leading-relaxed">{p.text}</p>
-                    </div>
-                  ))}
+
+                <div className="grid md:grid-cols-2 gap-6 mb-10">
+                  <div className="p-6 md:p-8 bg-white rounded-2xl border border-[#443A94]/15 shadow-sm text-left">
+                    <h3 className="text-2xl font-display font-normal text-primary mb-2">Contrato mensal</h3>
+                    <p className="font-body text-sm md:text-base text-muted-foreground font-light leading-relaxed">
+                      Vale para os serviços mensais, como a Gestão de Redes Sociais e o acompanhamento da Gestão de Leads: contrato mínimo de 3 meses, com renovação automática.
+                      Para encerrar, avise até 20 dias antes do fim do período.
+                    </p>
+                  </div>
+                  <div className="p-6 md:p-8 bg-white rounded-2xl border border-[#443A94]/15 shadow-sm text-left">
+                    <h3 className="text-2xl font-display font-normal text-primary mb-2">Não cobramos duas vezes</h3>
+                    <p className="font-body text-sm md:text-base text-muted-foreground font-light leading-relaxed">
+                      Se um serviço aparece em mais de um pacote e você já contratou, ele sai da conta.
+                    </p>
+                  </div>
                 </div>
-                <p className="font-body text-sm text-muted-foreground font-light text-center max-w-2xl mx-auto mt-8 leading-relaxed">
-                  Precisa do mesmo serviço com frequência? O pacote mensal entrega o item que você escolher todo mês,
-                  com condição especial.
-                </p>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="p-6 md:p-8 bg-white rounded-2xl border border-[#443A94]/15 shadow-sm text-left">
+                    <h3 className="text-2xl font-display font-normal text-primary mb-4">Nosso processo, em 5 etapas</h3>
+                    <ol className="space-y-3">
+                      {etapas.map((e, i) => (
+                        <li key={e.nome} className="flex gap-3 font-body text-sm text-muted-foreground font-light leading-relaxed">
+                          <span aria-hidden="true" className="font-display text-xl text-[#443A94] leading-none w-5 flex-shrink-0">
+                            {i + 1}
+                          </span>
+                          <span>
+                            <strong className="font-semibold text-primary">{e.nome}.</strong> {e.texto}
+                          </span>
+                        </li>
+                      ))}
+                    </ol>
+                    <Link
+                      to="/processo"
+                      className="inline-flex items-center min-h-[44px] mt-3 font-body font-bold text-sm text-primary underline underline-offset-4"
+                    >
+                      Ver o método completo
+                    </Link>
+                  </div>
+                  <div className="p-6 md:p-8 bg-white rounded-2xl border border-[#443A94]/15 shadow-sm text-left">
+                    <h3 className="text-2xl font-display font-normal text-primary mb-4">O que fica de fora</h3>
+                    <ul className="space-y-2 font-body text-sm text-muted-foreground font-light leading-relaxed list-disc pl-5">
+                      {foraDoEscopo.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </section>
 
-              {/* Closing CTA */}
-              <section className="bg-[#443A94] rounded-3xl p-8 md:p-16 text-white text-center shadow-lg relative overflow-hidden max-w-4xl mx-auto">
-                <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full blur-3xl pointer-events-none" />
-                <h2 className="text-2xl md:text-3xl font-display font-normal mb-4">
+              {/* CTA */}
+              <section className="bg-[#443A94] rounded-3xl p-8 md:p-16 text-white text-center shadow-lg relative overflow-hidden max-w-4xl mx-auto" aria-labelledby="servicos-cta">
+                <h2 id="servicos-cta" className="text-2xl md:text-3xl font-display font-normal mb-4">
                   Pronta pra ocupar seu espaço de vez?
                 </h2>
-                <p className="font-body text-white/80 text-sm max-w-2xl mx-auto mb-8 leading-relaxed font-light">
-                  Escolha só o que faz sentido agora e monte o seu pacote com a gente.
+                <p className="font-body text-white/90 text-sm max-w-2xl mx-auto mb-8 leading-relaxed font-light">
+                  Escolha só o que faz sentido agora e peça o seu orçamento.
                 </p>
-                <a
-                  href="https://wa.me/5513991598181?text=Olá! Gostaria de montar um pacote de serviços com a Lunae."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center text-center font-body font-bold text-sm bg-white text-[#443A94] hover:bg-[#FA7C9C] hover:text-white py-4 px-8 rounded-full transition-all duration-300"
+                <Link
+                  to="/contato"
+                  className="inline-flex items-center justify-center text-center min-h-[48px] font-body font-bold text-sm bg-white text-[#443A94] hover:bg-[#FA7C9C] hover:text-[#1B1B1B] py-3 px-8 rounded-full transition-colors duration-300"
                 >
-                  Montar meu pacote pelo WhatsApp ✦
-                </a>
+                  Quero um orçamento
+                </Link>
                 <p className="block w-fit mx-auto font-display font-normal text-3xl md:text-5xl tracking-wide text-white/90 mt-10 origin-center cursor-default transition-transform duration-300 motion-safe:hover:scale-120 motion-reduce:transition-none">Conta com a gente!</p>
               </section>
-
             </div>
           </main>
 

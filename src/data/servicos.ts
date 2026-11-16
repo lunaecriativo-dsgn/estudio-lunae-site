@@ -13,15 +13,17 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-// Fonte única dos serviços do site (menu, página de Serviços, home e formulário de contato).
-// Baseada no Catálogo Central de Serviços da Lunae (12/11/2026). Sem valores, de propósito.
+// Lista dos serviços do site: menu, cards da página de Serviços, home e formulário.
+// Os detalhes de cada serviço (tabelas, observações) ficam em catalogo.ts.
+// Fonte: Catálogo de Serviços 2026 e prompt de atualização do site.
 
 export interface Servico {
-  id: string;
+  id: string; // também é o slug da página: /servicos/:id
   title: string;
-  short: string;
+  short: string; // frase de benefício
   url: string;
   icon: LucideIcon;
+  faqKey: string; // aba do FAQ deste serviço
 }
 
 export interface Frente {
@@ -32,69 +34,71 @@ export interface Frente {
   servicos: Servico[];
 }
 
-export const identidadeVisual: Servico = {
+const servico = (s: Omit<Servico, "url">): Servico => ({ ...s, url: `/servicos/${s.id}` });
+
+export const identidadeVisual = servico({
   id: "identidade-visual",
   title: "Identidade Visual",
-  short: "Logo, cores, tipografia, manual e templates que traduzem sua essência.",
-  url: "/servicos/identidade-visual",
+  short: "Uma marca com a sua cara, pra você usar tudo com segurança.",
   icon: Paintbrush,
-};
+  faqKey: "identidade-visual",
+});
 
-export const complementosIlustrados: Servico = {
+export const complementosIlustrados = servico({
   id: "complementos-ilustrados",
   title: "Complementos Ilustrados",
-  short: "Personas, infográficos, carrosséis e ícones feitos só pra sua marca.",
-  url: "/servicos/complementos-ilustrados",
+  short: "Ilustrações feitas só pra sua marca, pra explicar, encantar e diferenciar.",
   icon: Sparkles,
-};
+  faqKey: "complementos-ilustrados",
+});
 
-export const materiaisGraficos: Servico = {
+export const materiaisGraficos = servico({
   id: "materiais-graficos",
   title: "Materiais Gráficos",
-  short: "Cartão, folder, cardápio e outros impressos com a identidade da sua marca.",
-  url: "/servicos/materiais-graficos",
+  short: "Sua marca também fora das telas, com a mesma identidade do seu digital.",
   icon: Printer,
-};
+  faqKey: "materiais-graficos",
+});
 
-export const instagramEstrategico: Servico = {
+export const instagramEstrategico = servico({
   id: "instagram-estrategico",
   title: "Instagram Estratégico",
-  short: "Perfil organizado, calendário de conteúdo e templates pra facilitar sua rotina.",
-  url: "/servicos/instagram-estrategico",
+  short: "Seu perfil mostrando melhor o valor do seu trabalho.",
   icon: Smartphone,
-};
+  faqKey: "instagram-estrategico",
+});
 
-export const presencaDigital: Servico = {
+export const presencaDigital = servico({
   id: "presenca-digital",
   title: "Presença Digital",
-  short: "Site rápido e estratégico que passa credibilidade e atrai as pessoas certas.",
-  url: "/servicos/presenca-digital",
+  short: "Um endereço seu no digital, pra as pessoas entenderem rápido quem você é.",
   icon: Globe,
-};
+  faqKey: "site",
+});
 
-export const portfolio: Servico = {
+export const portfolio = servico({
   id: "portfolio",
   title: "Portfólio",
-  short: "Seus melhores projetos reunidos em um portfólio claro, em documento ou em site.",
-  url: "/servicos/portfolio",
+  short: "Seu trabalho, bem apresentado, em documento ou em site.",
   icon: FolderOpen,
-};
+  faqKey: "portfolio",
+});
 
-export const gestaoRedes: Servico = {
+export const gestaoRedes = servico({
   id: "gestao-de-redes-sociais",
   title: "Gestão de Redes Sociais",
-  short: "A gente planeja, cria e publica seus conteúdos todo mês.",
-  url: "/servicos/gestao-de-redes-sociais",
+  short: "Você cuida do seu negócio. A gente mantém sua marca presente.",
   icon: CalendarCheck,
-};
+  faqKey: "gestao-de-redes",
+});
 
-export const gestaoLeads: Servico = {
+export const gestaoLeads = servico({
   id: "gestao-de-leads",
   title: "Gestão de Leads",
-  short: "Funil, atendimento e acompanhamento pra nenhum contato se perder.",
-  url: "/servicos/gestao-de-leads",
+  short: "Nenhum contato perdido: você sabe quem atender e quando.",
   icon: Users,
-};
+  faqKey: "gestao-de-leads",
+});
 
 export const frentes: Frente[] = [
   {
@@ -123,9 +127,4 @@ export const frentes: Frente[] = [
 
 export const todosServicos: Servico[] = frentes.flatMap((f) => f.servicos);
 
-// Opções do formulário de contato
-export const opcoesFormulario: string[] = [
-  ...todosServicos.map((s) => s.title),
-  "Mais de um serviço",
-  "Ainda não sei, quero ajuda pra escolher",
-];
+export const servicoPorId = (id: string): Servico | undefined => todosServicos.find((s) => s.id === id);

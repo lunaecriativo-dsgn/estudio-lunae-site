@@ -10,14 +10,7 @@ import SobrePage from "./pages/SobrePage";
 import ManifestoPage from "./pages/ManifestoPage";
 import EquipePage from "./pages/EquipePage";
 import ServicosPage from "./pages/ServicosPage";
-import IdentidadeVisualPage from "./pages/IdentidadeVisualPage";
-import InstagramEstrategicoPage from "./pages/InstagramEstrategicoPage";
-import PresencaDigitalPage from "./pages/PresencaDigitalPage";
-import PortfolioPage from "./pages/PortfolioPage";
-import ComplementosIlustradosPage from "./pages/ComplementosIlustradosPage";
-import MateriaisGraficosPage from "./pages/MateriaisGraficosPage";
-import GestaoRedesPage from "./pages/GestaoRedesPage";
-import GestaoLeadsPage from "./pages/GestaoLeadsPage";
+import ServicoPage from "./pages/ServicoPage";
 import CaseStudyPage from "./pages/CaseStudyPage";
 import ProcessoPage from "./pages/ProcessoPage";
 import FAQPage from "./pages/FAQPage";
@@ -39,14 +32,7 @@ const App = () => (
             <Route path="/sobre/manifesto" element={<ManifestoPage />} />
             <Route path="/sobre/equipe" element={<EquipePage />} />
             <Route path="/servicos" element={<ServicosPage />} />
-            <Route path="/servicos/identidade-visual" element={<IdentidadeVisualPage />} />
-            <Route path="/servicos/instagram-estrategico" element={<InstagramEstrategicoPage />} />
-            <Route path="/servicos/presenca-digital" element={<PresencaDigitalPage />} />
-            <Route path="/servicos/portfolio" element={<PortfolioPage />} />
-            <Route path="/servicos/complementos-ilustrados" element={<ComplementosIlustradosPage />} />
-            <Route path="/servicos/materiais-graficos" element={<MateriaisGraficosPage />} />
-            <Route path="/servicos/gestao-de-redes-sociais" element={<GestaoRedesPage />} />
-            <Route path="/servicos/gestao-de-leads" element={<GestaoLeadsPage />} />
+            <Route path="/servicos/:slug" element={<ServicoPage />} />
             <Route path="/projetos/:slug" element={<CaseStudyPage />} />
             <Route path="/processo" element={<ProcessoPage />} />
             <Route path="/faq" element={<FAQPage />} />
