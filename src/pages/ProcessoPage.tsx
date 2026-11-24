@@ -4,6 +4,7 @@ import { ChevronRight, Home, Compass, Target, PenTool, Edit3, CheckCircle } from
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import { SITE_URL } from "@/lib/site";
 
 interface ProcessStep {
   number: string;
@@ -60,7 +61,7 @@ const ProcessoPage = () => {
     "publisher": {
       "@type": "Organization",
       "name": "Lunae Estúdio Criativo",
-      "logo": "https://lunaestudio.com.br/assets/logo-lunae.png"
+      "logo": `${SITE_URL}/logo-lunae.png`
     }
   };
 

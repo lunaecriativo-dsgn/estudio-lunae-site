@@ -1,0 +1,32 @@
+# Lunae Estúdio Criativo
+
+> A Lunae é um estúdio criativo de Santos (SP), fundado por Luiza Menezes e Nayla Prilla, que cria identidade visual, Instagram estratégico e sites para mulheres empreendedoras, profissionais autônomas e pequenos negócios. Atende presencialmente na Baixada Santista e online em todo o Brasil.
+
+A Lunae une estratégia, design, ilustração autoral, UX/UI e desenvolvimento front-end para que pequenos negócios tenham uma presença digital profissional, consistente e fácil de manter. O processo é colaborativo: a cliente conhece o próprio negócio, a Lunae traz a especialidade em marca e digital.
+
+## Serviços
+
+- [Identidade Visual](https://lunaecriativo.com.br/servicos/identidade-visual): logo, cores, tipografia, elementos gráficos, manual da marca e templates.
+- [Instagram Estratégico](https://lunaecriativo.com.br/servicos/instagram-estrategico): diagnóstico, posicionamento, bio, destaques, pilares de conteúdo e templates.
+- [Presença Digital (sites)](https://lunaecriativo.com.br/servicos/presenca-digital): sites institucionais e landing pages responsivos, com UX/UI, SEO básico, domínio e hospedagem.
+- [Gestão de Redes Sociais](https://lunaecriativo.com.br/servicos/gestao-de-redes-sociais): planejamento, criação e publicação mensal de conteúdo.
+- [Portfólio](https://lunaecriativo.com.br/servicos/portfolio): portfólio profissional em site ou documento.
+- [Complementos Ilustrados](https://lunaecriativo.com.br/servicos/complementos-ilustrados): ilustrações autorais e artes informativas para a marca.
+- [Materiais Gráficos](https://lunaecriativo.com.br/servicos/materiais-graficos): papelaria e peças impressas.
+- [Gestão de Leads](https://lunaecriativo.com.br/servicos/gestao-de-leads): organização dos contatos que chegam pelo digital.
+
+## Sobre
+
+- [Sobre a Lunae](https://lunaecriativo.com.br/sobre)
+- [Equipe](https://lunaecriativo.com.br/sobre/equipe): Luiza Menezes (Product Designer, UX/UI e desenvolvimento) e Nayla Prilla (ilustradora e designer visual).
+- [Método de trabalho](https://lunaecriativo.com.br/processo)
+- [Dúvidas frequentes](https://lunaecriativo.com.br/faq)
+
+## Contato
+
+- Site: https://lunaecriativo.com.br
+- Formulário: https://lunaecriativo.com.br/contato
+- E-mail: comercial@lunaecriativo.com.br
+- WhatsApp: +55 13 99159-8181
+- Instagram: https://www.instagram.com/lunae.estudiocriativo/
+- LinkedIn: https://www.linkedin.com/company/lunae-estudiocriativo/

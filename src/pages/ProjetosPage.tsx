@@ -4,7 +4,8 @@ import { ChevronRight, Home, ArrowRight, Eye, Sparkles } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import paperTexture from "@/assets/paper-texture.jpg";
+import paperTexture from "@/assets/paper-texture.webp";
+import { SITE_URL } from "@/lib/site";
 
 interface ProjectItem {
   slug: string;
@@ -51,7 +52,7 @@ const ProjetosPage = () => {
     "publisher": {
       "@type": "Organization",
       "name": "Lunae Estúdio Criativo",
-      "logo": "https://lunaestudio.com.br/assets/logo-lunae.png"
+      "logo": `${SITE_URL}/logo-lunae.png`
     }
   };
 

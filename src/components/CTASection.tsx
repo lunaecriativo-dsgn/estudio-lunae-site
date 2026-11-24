@@ -1,12 +1,9 @@
 import React from "react";
 
 const CTASection = () => {
-  const handleWhatsApp = () => {
-    const message = encodeURIComponent(
+  const whatsappUrl = `https://wa.me/5513991598181?text=${encodeURIComponent(
       "Olá! Minha marca já existe, mas sinto que ela precisa ocupar mais espaço. Gostaria de conversar com a equipe da Lunae sobre as soluções."
-    );
-    window.open(`https://wa.me/5513991598181?text=${message}`, "_blank");
-  };
+  )}`;
 
   return (
     <section id="cta" className="py-32 md:py-48 relative overflow-hidden border-t border-[#443A94]/5">
@@ -29,12 +26,14 @@ const CTASection = () => {
 
           {/* Single strategic CTA button */}
           <div className="pt-4 flex justify-center">
-            <button
-              onClick={handleWhatsApp}
-              className="px-10 py-5 bg-[#443A94] text-white hover:bg-[#FA7C9C] hover:text-white transition-all duration-300 rounded-full font-body font-semibold text-base md:text-lg shadow-lg shadow-[#443A94]/15 hover:shadow-[#FA7C9C]/30 hover:-translate-y-1 cursor-pointer"
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-10 py-5 bg-[#443A94] text-white hover:bg-[#FA7C9C] hover:text-white transition-all duration-300 rounded-full font-body font-semibold text-base md:text-lg shadow-lg shadow-[#443A94]/15 hover:shadow-[#FA7C9C]/30 hover:-translate-y-1 cursor-pointer"
             >
               Fale direto conosco ✦
-            </button>
+            </a>
           </div>
           <p className="block w-fit mx-auto font-display font-normal text-3xl md:text-5xl tracking-wide text-primary mt-4 origin-center cursor-default transition-transform duration-300 motion-safe:hover:scale-120 motion-reduce:transition-none">Conta com a gente!</p>
 

@@ -4,12 +4,9 @@ import { motion } from "motion/react";
 import heroIllustration from "@/assets/hero-illustration-new.webp";
 
 const HeroSection = () => {
-  const handleWhatsApp = () => {
-    const message = encodeURIComponent(
+  const whatsappUrl = `https://wa.me/5513991598181?text=${encodeURIComponent(
       "Olá! Sinto que minha marca não comunica meu verdadeiro valor e gostaria de conversar sobre as soluções da Lunae."
-    );
-    window.open(`https://wa.me/5513991598181?text=${message}`, "_blank");
-  };
+  )}`;
 
   return (
     <section className="relative flex flex-col justify-center pt-32 pb-24 md:pt-48 md:pb-36 overflow-hidden">
@@ -63,12 +60,14 @@ const HeroSection = () => {
             >
               Conheça nossos serviços
             </Link>
-            <button
-              onClick={handleWhatsApp}
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4.5 border-2 border-[#443A94] text-primary hover:bg-[#FA7C9C] hover:border-[#FA7C9C] hover:text-white hover:shadow-lg hover:shadow-[#FA7C9C]/30 transition-all duration-300 rounded-full font-body font-semibold text-base hover:-translate-y-0.5 min-h-[44px] flex items-center justify-center text-center w-full sm:w-auto bg-white/50 backdrop-blur-sm cursor-pointer"
             >
               Falar com a Lunae ✦
-            </button>
+            </a>
           </motion.div>
 
           {/* Protagonist Large Visual Asset */}

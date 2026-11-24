@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import charLuiza from "@/assets/char-luiza.png";
-import fotoLuiza from "@/assets/foto-luiza.png";
-import charNayla from "@/assets/char-nayla.png";
-import fotoNayla from "@/assets/foto-nayla.png";
-import personagensCores from "@/assets/personagens-cores.png";
+import charLuiza from "@/assets/char-luiza.webp";
+import fotoLuiza from "@/assets/foto-luiza.webp";
+import charNayla from "@/assets/char-nayla.webp";
+import fotoNayla from "@/assets/foto-nayla.webp";
+import personagensCores from "@/assets/personagens-cores.webp";
 
 interface TeamMember {
   id: string;

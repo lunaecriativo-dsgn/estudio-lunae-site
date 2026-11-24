@@ -4,11 +4,12 @@ import { ChevronRight, Home, Shield, Code, Layout, Heart, Sparkles, User, Extern
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import charLuiza from "@/assets/char-luiza.png";
-import fotoLuiza from "@/assets/foto-luiza.png";
-import charNayla from "@/assets/char-nayla.png";
-import fotoNayla from "@/assets/foto-nayla.png";
-import personagensCores from "@/assets/personagens-cores.png";
+import charLuiza from "@/assets/char-luiza.webp";
+import fotoLuiza from "@/assets/foto-luiza.webp";
+import charNayla from "@/assets/char-nayla.webp";
+import fotoNayla from "@/assets/foto-nayla.webp";
+import personagensCores from "@/assets/personagens-cores.webp";
+import { SITE_URL } from "@/lib/site";
 
 interface Founder {
   id: string;
@@ -55,7 +56,7 @@ const EquipePage = () => {
     "publisher": {
       "@type": "Organization",
       "name": "Lunae Estúdio Criativo",
-      "logo": "https://lunaestudio.com.br/assets/logo-lunae.png"
+      "logo": `${SITE_URL}/logo-lunae.png`
     }
   };
 

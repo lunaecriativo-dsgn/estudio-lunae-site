@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { frentes } from "@/data/servicos";
+import { SITE_URL } from "@/lib/site";
 
 const etapas = [
   { nome: "Descobrir", texto: "Conversa, briefing e diagnóstico do seu negócio." },
@@ -31,7 +32,7 @@ const ServicosPage = () => {
     "publisher": {
       "@type": "Organization",
       "name": "Lunae Estúdio Criativo",
-      "logo": "https://lunaestudio.com.br/assets/logo-lunae.png"
+      "logo": `${SITE_URL}/logo-lunae.png`
     }
   };
 

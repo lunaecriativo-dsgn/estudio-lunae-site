@@ -11,3 +11,4 @@
 - [x] Atualizar os links de Instagram e LinkedIn no rodapé para as novas URLs oficiais da Lunae.
 - [x] Implementar alternador de Modo Claro e Modo Escuro (Dark Mode / Light Mode) acessível no Header (desktop e mobile), Footer e botão flutuante com persistência local.
 - [x] Criar a página completa de estudo de caso / portfólio da Mari Locações com foco em atrair novos clientes para a Lunae ("A Lunae transforma negócios em marcas mais claras, profissionais e reconhecíveis"), cobrindo todos os 11 blocos estratégicos da metodologia.
+- [x] SEO técnico: domínio oficial lunaecriativo.com.br no canonical/Open Graph/dados estruturados, pré-renderização das páginas no build (scripts/prerender.mjs), sitemap.xml automático, robots.txt, llms.txt, .htaccess (301, 404 real, cabeçalhos de segurança), botões de WhatsApp como links e imagens em WebP.

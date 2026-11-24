@@ -4,7 +4,8 @@ import { ChevronRight, Home, Shield, Heart, Flame } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import aboutIllustration from "@/assets/about-illustration.png";
+import aboutIllustration from "@/assets/about-illustration.webp";
+import { SITE_URL } from "@/lib/site";
 
 const ManifestoPage = () => {
   const manifestoSchema = {
@@ -15,7 +16,7 @@ const ManifestoPage = () => {
     "publisher": {
       "@type": "Organization",
       "name": "Lunae Estúdio Criativo",
-      "logo": "https://lunaestudio.com.br/assets/logo-lunae.png"
+      "logo": `${SITE_URL}/logo-lunae.png`
     }
   };
 

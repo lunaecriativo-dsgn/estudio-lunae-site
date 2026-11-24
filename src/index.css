@@ -223,18 +223,18 @@
 
   /* Fundo de papel amassado: versão clara e versão escura, com contraste reforçado */
   .paper-bg {
-    background-image: url('./assets/paper-texture-light.jpg');
+    background-image: url('./assets/paper-texture-light.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
   }
 
   .dark .paper-bg {
-    background-image: url('./assets/paper-texture-dark.jpg');
+    background-image: url('./assets/paper-texture-dark.webp');
   }
 
   .paper-texture {
-    background-image: url('@/assets/paper-texture.jpg');
+    background-image: url('@/assets/paper-texture.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

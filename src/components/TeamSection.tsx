@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import charLuiza from "@/assets/char-luiza.png";
-import fotoLuiza from "@/assets/foto-luiza.png";
-import charNayla from "@/assets/char-nayla.png";
-import fotoNayla from "@/assets/foto-nayla.png";
+import charLuiza from "@/assets/char-luiza.webp";
+import fotoLuiza from "@/assets/foto-luiza.webp";
+import charNayla from "@/assets/char-nayla.webp";
+import fotoNayla from "@/assets/foto-nayla.webp";
 
 interface TeamMember {
   id: string;

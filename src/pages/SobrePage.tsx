@@ -4,6 +4,7 @@ import { ChevronRight, Home, ShieldAlert, FileText, Users, ArrowRight } from "lu
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import { SITE_URL } from "@/lib/site";
 
 const SobrePage = () => {
   const indexSchema = {
@@ -14,7 +15,7 @@ const SobrePage = () => {
     "publisher": {
       "@type": "Organization",
       "name": "Lunae Estúdio Criativo",
-      "logo": "https://lunaestudio.com.br/assets/logo-lunae.png"
+      "logo": `${SITE_URL}/logo-lunae.png`
     }
   };
 
